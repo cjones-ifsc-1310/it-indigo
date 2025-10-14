@@ -6,9 +6,35 @@
     <meta name="description" content="SEO Rich narrative" />
     <meta name="author" content="Christine Jones" />
     <title>HTML5 Cheatsheet</title>
+    <style>
+    input, textarea, label{
+      display:block;
+    }
+  </style>
   </head>
   <body>
     <h1>HTML5 Cheatsheet</h1>
+    <section id="forms">
+      <form action="processing-script.php" method="post">
+        <fieldset>
+          <legend>Personal Info</legend>
+          <input type="date"/>
+          <label>Email:</label><input type="email"/>
+          <label>Customer Name:</label><input type="text" id=""cust-name" name="cust-name" placeholder="Enter First and Last Name"/>
+          <label for="address">Address</label>
+          <textarea id="address name=address"></textarea>
+          <label for="fav-color">Favorite Color</label>
+          <select id="fav-color" name="fav-color">
+            <option selected="selected"></option>
+<option> Red </option>
+<option> Green </option>
+<option> Blue </option>
+          </select>
+           <input type="submit" value="Confirm that ChrissyJ80 is the coolest, ever."/>
+        </fieldset>
+      </form>
+
+    </section>
     <section id="headings">
       <h2>Headings</h2>
       <h1>Heading 1</h1>
