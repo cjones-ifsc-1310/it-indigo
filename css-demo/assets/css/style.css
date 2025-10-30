@@ -2,16 +2,18 @@ body{
 background-color: #CF5B93;
 font-family: "Cinzel", serif;
 
+
 }
 a{
     color:#5779EB
 }
-    h1{ 
+    h2{ 
         color:#CF5B93;
       
     }
     main{
         background-color:#E6C363;
+
 width:80vw;
 text-align:center;
 margin:40px auto;
@@ -19,4 +21,4 @@ border:10px double #560646 ;
 border-radius:100px;
     }
 
-    
+
