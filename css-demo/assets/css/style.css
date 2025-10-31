@@ -1,3 +1,24 @@
+html {
+
+box-sizing: border-box;
+
+}
+*, *:before, *after {
+box-sizing: inherit;
+
+}
+
+/*--------Utility Classes*/
+
+.container{
+margin:auto;
+padding:40px;
+max-width:900px;
+
+}
+
+
+
 body{
 background-color: #CF5B93;
 font-family: "Cinzel", serif;
@@ -16,9 +37,49 @@ a{
 
 width:80vw;
 text-align:center;
-margin:40px auto;
+margin:20px auto;
 border:10px double #560646 ;
-border-radius:100px;
+border-radius:5px;
+    }
+    div.hgroup{
+
+        width:70%;
+
+    }
+header.primary nav {
+width:30%;
+
+}
+    header.primary {
+background-color: #2a1a87;
+padding:20px;
+background-image:url(../img/bg_1.webp);
+background-size: cover;
+background-repeat:no-repeat;
+background-position:center;
+border:3px double  #560646;
+display:flex;
+justify-content: space-between;
+
+    }
+    div.hgroup h1 a{
+color:#5779EB;
+text-decoration:none;
+font-size:2.5rem;
+text-shadow: 1px 1px #E6C363;
+
     }
 
+    div.hgroup h2{
 
+color:#CF5B93;
+text-shadow: 1px 1px #E6C363;
+
+    
+
+}
+.hgroup h1, .hgroup h2{
+
+    margin:0;
+
+}
