@@ -47,7 +47,6 @@ border-radius:5px;
 
     }
 header.primary nav ul li a{
-    text-decoration: none;
 color:#E6C363;
 display:block;
 margin-bottom:10px;
@@ -56,7 +55,7 @@ border:1px solid #E6C363;
 border-right:10px solid #E6C363;
 border-radius:20px 0;
 padding:10px 10px 10px 0;
-font:size 0.9rem;
+font-size:.9rem;
 text-shadow: 2px 2px #5779EB;
 transition:.2s;
 }
@@ -67,6 +66,9 @@ background: #560646;
 
 }
 
+header.primary nav ul{
+    text-decoration: none;
+}
 
     header.primary {
 background-color: #2a1a87;
