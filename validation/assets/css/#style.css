@@ -1,0 +1,26 @@
+html {
+
+box-sizing: border-box;
+
+}
+*, *:before, *after {
+box-sizing: inherit;
+
+}
+
+.container{
+margin:auto;
+padding:40px;
+max-width:900px;
+
+}
+main{
+        background-color:#E6C363;
+
+width:80vw;
+text-align:center;
+margin:20px auto;
+border:10px double #560646 ;
+border-radius:5px;
+    }
+    
