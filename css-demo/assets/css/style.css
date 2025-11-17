@@ -202,11 +202,12 @@ color:#E6C363;
 grid-area: footer;
 color:#E6C363;
 
+
+
 }
 
 .post .post-meta a{
-    color:#CF5B93;
-
+    color:#CF5B93
 }
 aside .container{
     display:grid;

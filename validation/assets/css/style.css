@@ -1,0 +1,54 @@
+html {
+
+box-sizing: border-box;
+
+}
+*, *:before, *after {
+box-sizing: inherit;
+
+}
+/*---Responsive Image------*/
+
+img{
+
+    max-width: 100%;
+}
+
+/*--------Utility Classes*/
+
+.container{
+margin:auto;
+padding:40px;
+}
+
+
+
+body{
+background-color: #CF5B93;
+font-family: "Cinzel", serif;
+
+
+}
+main{
+background-color:#E6C363;
+width:80vw;
+max-width:980px;
+text-align:center;
+color: #2a1a87;
+margin:40px auto;
+border:4px solid #2a1a87;
+
+    }
+
+    header.primary {
+padding:20px;
+border:10px solid #2a1a87;
+
+    }
+
+    form{ 
+text-align:left;
+background-color:#E6C363
+
+}
+
