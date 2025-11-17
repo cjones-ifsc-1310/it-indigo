@@ -19,7 +19,6 @@ img{
 .container{
 margin:auto;
 padding:40px;
-max-width:900px;
 
 }
 
@@ -40,31 +39,44 @@ a{
     }
     main{
         background-color:#E6C363;
-
 width:80vw;
+max-width:900px;
 text-align:left;
-margin:20px auto;
-border:10px #000;
+color: #2a1a87;
+margin:40px auto;
+border:4px solid #2a1a87;
+border-radius: 5px;
+
     }
     div.hgroup{
 
         width:70%;
 
     }
+
+    nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 header.primary nav ul li a{
 color:#E6C363;
 display:block;
 margin-bottom:10px;
-background:#2a1a87;
+background:hsla(249, 68%, 32%, 0.408);
 border:1px solid #E6C363;
 border-right:10px solid #E6C363;
 border-radius:20px 0;
-padding:10px 10px 10px 0;
+padding:10px 10px 10px 10px;
 font-size:.9rem;
-text-shadow: 2px 2px #5779EB;
+text-shadow:2px 3px #2a1a87;
 transition:.2s;
 }
 
+header.primary nav{
+    width:30%;
+
+}
 header.primary nav ul li a:hover{
 text-decoration:underline;
 background: #560646;
@@ -81,7 +93,9 @@ padding:20px;
 background-image:url(../img/bg_1.webp);
 background-size: cover;
 background-repeat:no-repeat;
-border:3px double  #560646;
+background-position: center;
+border:7px solid  #5779EB;
+border-radius:5px;
 display:flex;
 justify-content: space-between;
 
@@ -116,6 +130,22 @@ padding:5px 7.5px 0 5px;
 
 }
 
+#content h2, #content h3, .widget header h2{
+ color:#560646;
+ border-left:10px solid #CF5B93;
+ border-radius:15px 0;
+ padding:5px 7.5px 0 5px;
+
+}
+
+#blog{
+background-color: #2a1a87;
+padding: 20px 0;
+border-top:  6px double #5779EB;
+border-bottom: 6px double #5779EB;
+border-radius:15px 0;
+
+}
 #blog .post{
 
     display:grid;
@@ -127,26 +157,55 @@ padding:5px 7.5px 0 5px;
     margin:20px;
     padding:20px;
     background: hsla(226, 79%, 63%, 0.557);
-    
+    border-top:  6px double #5779EB;
+border-bottom: 6px double #5779EB;
+border-radius:15px 0;
+
+
+}
+#blog > h2 {
+
+color:#E6C363;
 
 
 }
 
+#blog
+.post .post-date {
+    color:#E6C363;
+}
 .post figure{
     grid-area: figure;
     margin:0 20px 0 0;
 }
 
+.post figcaption {
+    color:#CF5B93;
+
+}
 .post header{
     grid-area:header;
+    
+}
+
+.post h2 a {
+    color:#CF5B93;
 
 }
 .post .post-content{
     grid-area:post-content;
+    color:#E6C363;
+
 }
+
 .post .post-meta{
 grid-area: footer;
+color:#E6C363;
 
+}
+
+.post .post-meta a{
+    color:#CF5B93;
 
 }
 aside .container{
