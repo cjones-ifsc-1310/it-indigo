@@ -51,4 +51,30 @@ text-align:left;
 background-color:#E6C363
 
 }
+.weight{
 
+    border-bottom: 2px;
+    border-bottom-style:dashed;
+    border-bottom-color:#2a1a87;
+
+}
+.decorative-line {
+  border-top: 1px solid #2a1a87; 
+  width: 100%;
+  margin: 1em 0;
+}
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #2a1a87;
+  resize: vertical;
+
+}
+.formlabel {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+        padding: 5px;
+        font-weight: bold;
+    }
+    

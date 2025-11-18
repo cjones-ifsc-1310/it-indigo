@@ -18,33 +18,34 @@
 </div>
 </header>
 
-<section id="form" class="container">
+<section id="form-1" class="container">
 <form id="new patient registration" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
     <p>Please fill out the form below.</p>
-   <label for="Name">First Name:</label>
+   <label for="Name" class="formlabel">First Name:</label>
 <input type="text" id="first name" name="FirstName" size="30" maxlength="30"><br>
-<label for="Name">Middle Initial:</label>
+<label for="Name" class="formlabel">Middle Initial:</label>
 <input type="text" id="middle initial" name="MiddleInitial" size="1" maxlength="1"><br>
-<label for="Name">Last Name:</label>
+<label for="Name" class="formlabel">Last Name:</label>
 <input type="text" id="last name" name="LastName" size="30" maxlength="30"><br>
-<label for="Email">Email:</label>
+<label for="Email" class="formlabel">Email:</label>
 <input type="email" id="email" name="Email" size="30" maxlength="30"><br>
-<label for="sex">Sex</label><br>
+<label for="sex" class="formlabel">Gender</label>
 <input type="radio" id="male" name="gender" value="m">
   <label for="male">Male</label>
   <input type="radio" id="female" name="gender" value="f">
   <label for="female">Female</label>
   <input type="radio" id="n/a" name="gender" value="n">
 <label for="n/a">N/A</label><br>
-<label for="birthday">Birthday:</label>
+<label for="birthday" class="formlabel">Birthday:</label>
   <input type="date" id="birthday" name="birthday"><br>
-  <label for="height">Height (In Inches):</label>
+  <label for="height" class="formlabel">Height (In Inches):</label>
   <input type="text" id="height" name="height" size="3" maxlength="3"><br>
-  <label for="weight">Weight (In Pounds):</label>
+  <label for="weight" class="formlabel">Weight (In Pounds):</label>
   <input type="text" id="weight" name="weight" size="3" maxlength="3"><br>
-  <label for="phone number">Phone Number</label>
+  <div class="decorative-line"></div>
+  <label for="phone number" class="formlabel">Phone Number</label>
 <input type="tel" id="phone number" name="phone number" size="14" maxlength="14"><br>
-<label for="marital status">Marital Status</label>
+<label for="marital status" class="formlabel">Marital Status</label>
 <input list="marital status">
   <datalist id="marital status">
     <option value="Single" value="S">
@@ -53,11 +54,11 @@
     <option value="Legally Separated" value="L">
         <option value="Widowed" value="L"></option>
   </datalist><br>
-  <label for="address">Address:</label>
+  <label for="address" class="formlabel">Address:</label>
   <input type="text" id="address" name="address" size="30" maxlength="30"><br>
-  <label for="city">City</label>
-  <input type="text" id="city" name="city" size="30" maxlength="30">
-  <label for="state">State</label>
+  <label for="city" class="formlabel">City</label>
+  <input type="text" id="city" name="city" size="30" maxlength="30"><br>
+  <label for="state" class="formlabel">State</label>
   <input list="State">
   <datalist id="State">
   <option value="AL">Alabama</option>
@@ -112,8 +113,21 @@
 	<option value="WI">Wisconsin</option>
 	<option value="WY">Wyoming</option>
 </datalist>
-<label for="zip">Zip Code</label>
+<label for="zip" class="formlabel">Zip Code</label>
 <input type="text" id="zip" name="zip" size="5" maxlength="5"><br>
+<div class="decorative-line"></div>
+<label for="Medications" class="formlabel">Taking Medications?</label>
+<label for="yes">Yes</label>
+<input type="radio" id="yes" name="Medications" value="Y">
+<label for="no">No</label>
+<input type="radio" id="no" name="Medications" value="N"><br>
+<label for="MedicationsList" class="formlabel">If yes, list medications here:</label>
+<textarea id="MedicationsList" name="MedicationsList" rows="3" cols="30"></textarea>
+<div class="decorative-line"></div>
+<input type="submit" value="Submit Patient Form">
+
+
+
 
 
 
