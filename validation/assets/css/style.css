@@ -64,7 +64,7 @@ background-color:#E6C363
   margin: 1em 0;
 }
 textarea {
-  width: 100%;
+  width: 75%;
   padding: 10px;
   border: 1px solid #2a1a87;
   resize: vertical;
@@ -77,4 +77,23 @@ textarea {
         padding: 5px;
         font-weight: bold;
     }
+    input[type=button], input[type=submit] {
+        position:center;
+  background-color: #CF5B93;
+  border:5px;
+  color: #2a1a87;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 4px;
+  padding:20px;
+  cursor: pointer;
+}
+.parent-container {
+  text-align: center;
+  padding:10px;
+
+}
+p{
+    margin:10px;
     
+}

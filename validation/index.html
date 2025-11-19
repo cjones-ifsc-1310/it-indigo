@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <main>
@@ -18,35 +19,35 @@
 </div>
 </header>
 
-<section id="form-1" class="container">
+
 <form id="new patient registration" action="https://brucebauer.info/assets/ITEC3650/datadump.php">
     <p>Please fill out the form below.</p>
    <label for="Name" class="formlabel">First Name:</label>
-<input type="text" id="first name" name="FirstName" size="30" maxlength="30"><br>
+<input type="text" id="first name" name="FirstName" size="30" maxlength="30" required><br>
 <label for="Name" class="formlabel">Middle Initial:</label>
 <input type="text" id="middle initial" name="MiddleInitial" size="1" maxlength="1"><br>
-<label for="Name" class="formlabel">Last Name:</label>
+<label for="Name" class="formlabel" required>Last Name:</label>
 <input type="text" id="last name" name="LastName" size="30" maxlength="30"><br>
 <label for="Email" class="formlabel">Email:</label>
-<input type="email" id="email" name="Email" size="30" maxlength="30"><br>
-<label for="sex" class="formlabel">Gender</label>
-<input type="radio" id="male" name="gender" value="m">
+<input type="email" id="email" name="Email" size="30" maxlength="30" type="email" required><br>
+<label for="gender" class="formlabel">Gender</label>
+<input type="radio" id="male" name="gender" value="m" required>
   <label for="male">Male</label>
   <input type="radio" id="female" name="gender" value="f">
   <label for="female">Female</label>
   <input type="radio" id="n/a" name="gender" value="n">
 <label for="n/a">N/A</label><br>
 <label for="birthday" class="formlabel">Birthday:</label>
-  <input type="date" id="birthday" name="birthday"><br>
+  <input type="date" id="birthday" name="birthday" required><br>
   <label for="height" class="formlabel">Height (In Inches):</label>
-  <input type="text" id="height" name="height" size="3" maxlength="3"><br>
+  <input type="number" id="height" name="height" size="3" maxlength="3" required min="12" max="120"><br>
   <label for="weight" class="formlabel">Weight (In Pounds):</label>
-  <input type="text" id="weight" name="weight" size="3" maxlength="3"><br>
+  <input type="number" id="weight" name="weight" size="3" maxlength="3" required min="10" max="500"><br>
   <div class="decorative-line"></div>
   <label for="phone number" class="formlabel">Phone Number</label>
-<input type="tel" id="phone number" name="phone number" size="14" maxlength="14"><br>
+<input type="tel" id="phone number" name="phone number" required size="14" minlength="10" maxlength="14"><br>
 <label for="marital status" class="formlabel">Marital Status</label>
-<input list="marital status">
+<input list="marital status" required>
   <datalist id="marital status">
     <option value="Single" value="S">
     <option value="Married" value="M">
@@ -55,11 +56,11 @@
         <option value="Widowed" value="L"></option>
   </datalist><br>
   <label for="address" class="formlabel">Address:</label>
-  <input type="text" id="address" name="address" size="30" maxlength="30"><br>
+  <input type="text" id="address" name="address" size="30" maxlength="30" required><br>
   <label for="city" class="formlabel">City</label>
-  <input type="text" id="city" name="city" size="30" maxlength="30"><br>
+  <input type="text" id="city" name="city" size="30" maxlength="30" required><br>
   <label for="state" class="formlabel">State</label>
-  <input list="State">
+  <input list="State" required>
   <datalist id="State">
   <option value="AL">Alabama</option>
 	<option value="AK">Alaska</option>
@@ -114,17 +115,20 @@
 	<option value="WY">Wyoming</option>
 </datalist>
 <label for="zip" class="formlabel">Zip Code</label>
-<input type="text" id="zip" name="zip" size="5" maxlength="5"><br>
+<input type="text" id="zip" name="zip" size="5" maxlength="5" required><br>
 <div class="decorative-line"></div>
 <label for="Medications" class="formlabel">Taking Medications?</label>
 <label for="yes">Yes</label>
-<input type="radio" id="yes" name="Medications" value="Y">
+<input type="radio" id="yes" name="Medications" value="Y" required>
 <label for="no">No</label>
 <input type="radio" id="no" name="Medications" value="N"><br>
 <label for="MedicationsList" class="formlabel">If yes, list medications here:</label>
 <textarea id="MedicationsList" name="MedicationsList" rows="3" cols="30"></textarea>
 <div class="decorative-line"></div>
-<input type="submit" value="Submit Patient Form">
+<div class="parent-container">
+  <input type="submit" value="Submit Patient Form">
+</div>
+
 
 
 
@@ -141,7 +145,6 @@
 </form>
 
 
-</section>
 
 </main>
 
