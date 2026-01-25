@@ -10,9 +10,10 @@ html {
 }
 
 body{
-  font-family: 'Lato', sans-serif;
-  background:#c0c0c0;
+  font-family:"Lexend", sans-serif;
+  background: #8C6A03;
   padding:20px;
+  color:#f2f2f2;
 }
 
 label, input {
@@ -21,11 +22,14 @@ label, input {
 
 header h1{
   text-align:center;
+  color:#f2f2f2;
 }
 
 section[id]{
-  border:6px solid rgba(0,0,0,.4);
-  background:#fff;
+  border-right:6px solid #8C2703;
+  border-top:6px solid #8C2703;
+  border-bottom: 6PX solid #8C2703;
+  background:#020F59;
   border-radius:12px;
   margin:40px auto;
   padding:20px;
@@ -34,7 +38,9 @@ section[id]{
 }
 
 h2.section-heading{
-   border-bottom:2px solid #c0c0c0;
+   border-bottom:2px solid #f2f2f2;
+   color:#f2f2f2;
+
 }
 
 .section-heading{
@@ -51,6 +57,14 @@ h2.section-heading + h3.section-heading {
   padding-top:0;
 }
 
+#hyperlinks ul {
+    color:#8C6A03
+}
+
+#hyperlinks ul a{
+    color:#8C6A03;
+
+}
 .output{
   flex: 1 30%;
   padding-right:40px;
@@ -58,7 +72,7 @@ h2.section-heading + h3.section-heading {
 }
 .markup{
   flex: 1 70%;
-  background-color:lightgrey;
+  background-color:#8C2703;
   padding:10px;
   margin-bottom:40px;
   overflow:auto;
@@ -155,7 +169,7 @@ pre[class*="language-"] {
 .token.constant,
 .token.symbol,
 .token.deleted {
-	color: #905;
+	color: #8C2703;
 }
 
 .token.selector,
