@@ -150,18 +150,18 @@ padding:5px 7.5px 0 5px;
 }
 
 #content h2, #content h3, .widget header h2{
- color:#560646;
- border-left:10px solid #CF5B93;
+ color:#6f1f19;
+ border-left:10px solid #1a3f73;
  border-radius:15px 0;
  padding:5px 7.5px 0 5px;
 
 }
 
 #blog{
-background-color: #2a1a87;
+background-color: #742322;
 padding: 20px 0;
-border-top:  6px double #5779EB;
-border-bottom: 6px double #5779EB;
+border-top:  6px double #6f1f19;
+border-bottom: 6px double #b59c5a;
 border-radius:15px 0;
 
 }
@@ -175,9 +175,9 @@ border-radius:15px 0;
     "figure footer";
     margin:20px;
     padding:20px;
-    background: hsla(226, 79%, 63%, 0.557);
-    border-top:  6px double #5779EB;
-border-bottom: 6px double #5779EB;
+    background: #1a3f73;
+    border-top:  6px double #b59c5a;
+border-bottom: 6px double #b59c5a;
 border-radius:15px 0;
 
 
@@ -199,7 +199,7 @@ color:#E6C363;
 }
 
 .post figcaption {
-    color:#CF5B93;
+    color:#6f1f19;
 
 }
 .post header{
@@ -208,7 +208,7 @@ color:#E6C363;
 }
 
 .post h2 a {
-    color:#CF5B93;
+    color:#6f1f19;
 
 }
 .post .post-content{
@@ -226,7 +226,7 @@ color:#E6C363;
 }
 
 .post .post-meta a{
-    color:#CF5B93
+    color:#b59c5a
 }
 aside .container{
     display:grid;
