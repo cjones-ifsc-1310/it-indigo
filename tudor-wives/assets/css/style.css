@@ -30,25 +30,29 @@ background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-font-family: "Kings", cursive;
+font-family: "Quicksand", sans-serif;
 
 }
 
 a{
-    color:#5779EB
+    color:#1a3f73;
 }
-    h2{ 
-        color:#CF5B93;
-      
+   .primary h2{
+        color:#88322d;
+        font-size: 2.5rem;
+text-shadow: 2px 2px #b59c5a;
+ position: absolute;
+ bottom:0;
+    margin: 0 0 10px 10px;
     }
     main{
-        background-color:#E6C363;
+        background-color:#b59c5a;
 width:80vw;
 max-width:900px;
 text-align:left;
-color: #2a1a87;
+color: #1a3f73;
 margin:40px auto;
-border:4px solid #2a1a87;
+border:4px solid #1a3f73;
 border-radius: 5px;
 
     }
@@ -64,26 +68,34 @@ border-radius: 5px;
   padding: 0;
 }
 header.primary nav ul li a{
-color:#E6C363;
+color:#742322;
 display:block;
-margin-bottom:10px;
-background:hsla(249, 68%, 32%, 0.408);
-border:1px solid #E6C363;
-border-right:10px solid #E6C363;
+margin-bottom:5px;
+background:#b59c5a;
+border:1px solid #1a3f73;
+border-top: solid 5px #1a3f73;
+border-right:5px solid #1a3f73;
 border-radius:20px 0;
 padding:10px 10px 10px 10px;
-font-size:.9rem;
-text-shadow:2px 3px #2a1a87;
+font-size:1.5rem;
+text-shadow:.5px 1px #1a3f73;
 transition:.2s;
 }
 
 header.primary nav{
-    width:30%;
+    width:25%;
 
 }
+
+header.primary{
+    font-family: "Kings", cursive;
+
+}
+
 header.primary nav ul li a:hover{
 text-decoration:underline;
-background: #560646;
+color:#b59c5a;
+background: #6f1f19;
 
 }
 
@@ -92,30 +104,34 @@ header.primary nav ul{
 }
 
     header.primary {
-background-color: #2a1a87;
+background-color: #1a3f73;
 padding:20px;
-background-image:url(../img/AdobeStock_919581381.jpeg);
+background-image:url(../img/tudor-rose.png);
 background-size: cover;
 background-repeat:no-repeat;
 background-position: center;
-border:7px solid  #5779EB;
-border-radius:5px;
+border:2px solid  #b59c5a;
+border-radius:3px;
 display:flex;
 justify-content: space-between;
+position: relative;
 
     }
     div.hgroup h1 a{
-color:#5779EB;
+      color: #6f1f19;
+text-align:center;
+width: 50%;
+margin: 0 auto;
 text-decoration:none;
-font-size:2.5rem;
-text-shadow: 1px 1px #E6C363;
+font-size:3rem;
+text-shadow:2px 2px #b59c5a;
 
     }
 
 #content h2, #content h3{
-    color:#560646;
-text-shadow: 1px 1px #2a1a87;
-border-left:10px solid #CF5B93;
+    color:#6f1f19;
+text-shadow: 1px 1px #b59c5a;
+border-left:10px solid #1a3f73;
 border-radius:15px 0;
 text-align:left;
 padding:5px 7.5px 0 5px;
@@ -125,5 +141,107 @@ padding:5px 7.5px 0 5px;
 .hgroup h1, .hgroup h2{
 
     margin:0;
+
+}
+#content{
+
+    line-height:1.4;
+
+}
+
+#content h2, #content h3, .widget header h2{
+ color:#560646;
+ border-left:10px solid #CF5B93;
+ border-radius:15px 0;
+ padding:5px 7.5px 0 5px;
+
+}
+
+#blog{
+background-color: #2a1a87;
+padding: 20px 0;
+border-top:  6px double #5779EB;
+border-bottom: 6px double #5779EB;
+border-radius:15px 0;
+
+}
+#blog .post{
+
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    "figure header"
+    "figure post-content"
+    "figure footer";
+    margin:20px;
+    padding:20px;
+    background: hsla(226, 79%, 63%, 0.557);
+    border-top:  6px double #5779EB;
+border-bottom: 6px double #5779EB;
+border-radius:15px 0;
+
+
+}
+#blog > h2 {
+
+color:#E6C363;
+
+
+}
+
+#blog
+.post .post-date {
+    color:#E6C363;
+}
+.post figure{
+    grid-area: figure;
+    margin:0 20px 0 0;
+}
+
+.post figcaption {
+    color:#CF5B93;
+
+}
+.post header{
+    grid-area:header;
+    
+}
+
+.post h2 a {
+    color:#CF5B93;
+
+}
+.post .post-content{
+    grid-area:post-content;
+    color:#E6C363;
+
+}
+
+.post .post-meta{
+grid-area: footer;
+color:#E6C363;
+
+
+
+}
+
+.post .post-meta a{
+    color:#CF5B93
+}
+aside .container{
+    display:grid;
+    grid-template-columns: 2fr 2fr;
+    gap:40px;
+
+
+}
+#colophon{
+background-size: cover;
+background-repeat:no-repeat;
+padding:1px;
+text-align: center;
+color:#ffffff;
+
+
 
 }
