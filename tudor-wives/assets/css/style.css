@@ -151,10 +151,20 @@ text-shadow:2px 2px #b59c5a;
 
     }
 
-#content h2, #content h3{
+#content h2 {
     color:#6f1f19;
 text-shadow: 1px 1px #b59c5a;
 border-left:10px solid #1a3f73;
+border-radius:15px 0;
+text-align:left;
+padding:5px 7.5px 0 5px;
+font-family: "Kings", cursive;
+
+}
+
+#content h3{
+    color:#6f1f19;
+border-left:3px solid #1a3f73;
 border-radius:15px 0;
 text-align:left;
 padding:5px 7.5px 0 5px;
