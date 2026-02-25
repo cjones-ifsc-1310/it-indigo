@@ -58,10 +58,10 @@ font-family: "Quicksand", sans-serif;
 }
 
 a{
-    color:#1a3f73;
+    color:#04273a;
 }
    .primary h2{
-        color:#88322d;
+        color:#590743;
         font-size: 2.5rem;
 text-shadow: 2px 2px #b59c5a;
  position: absolute;
@@ -92,10 +92,10 @@ border-radius: 5px;
   padding: 0;
 }
 header.primary nav ul li a{
-color:#742322;
+color:#590743;
 display:block;
 margin-bottom:5px;
-background:#b59c5a;
+background:	#b59c5a;
 border:1px solid #1a3f73;
 border-top: solid 5px #1a3f73;
 border-right:5px solid #1a3f73;
@@ -119,7 +119,7 @@ header.primary{
 header.primary nav ul li a:hover{
 text-decoration:underline;
 color:#b59c5a;
-background: #6f1f19;
+background: #590743;
 
 }
 
@@ -134,14 +134,14 @@ background-image:url(../img/tudor-rose.png);
 background-size: cover;
 background-repeat:no-repeat;
 background-position: center;
-border:2px solid  #b59c5a;
+border:2px solid #b59c5a;
 border-radius:3px;
 justify-content: space-between;
 position: relative;
 
     }
     div.hgroup h1 a{
-      color: #6f1f19;
+      color: #590743;
 text-align:center;
 width: 50%;
 margin: 0 auto;
@@ -152,8 +152,8 @@ text-shadow:2px 2px #b59c5a;
     }
 
 #content h2 {
-    color:#6f1f19;
-text-shadow: 1px 1px #b59c5a;
+    color:#590743;
+text-shadow: 1px 1px 	#b59c5a;
 border-left:10px solid #1a3f73;
 border-radius:15px 0;
 text-align:left;
@@ -163,7 +163,7 @@ font-family: "Kings", cursive;
 }
 
 #content h3{
-    color:#6f1f19;
+    color:#590743;
 border-left:3px solid #1a3f73;
 border-radius:15px 0;
 text-align:left;
@@ -182,7 +182,7 @@ max-width: 800px;
 }
 
 #content-home .post{
- box-shadow: 0 4px 8px #1a3f73c1;  
+ box-shadow: 0 4px 8px #1a3f73;  
  padding:10px;
  font-size:.8rem;
 }
@@ -198,7 +198,7 @@ figure {margin:0}
 
 }
 
-#content-home a{color:#235E61;}
+#content-home a{color:#004d24;}
 
 .hgroup h1, .hgroup h2{
 
@@ -216,7 +216,7 @@ max-width: 500px;
 }
 
 #content2 .post{
- box-shadow: 0 16px 32px #1a3f73d7;  
+ box-shadow: 0 16px 32px #1a3f73;
  padding:10px;
  font-size:.8rem;
 }
@@ -230,7 +230,7 @@ figure {margin:0}
 
 }
 
-#content2 a{color:#235E61;}
+#content2 a{color:#004d24;}
 
 .hgroup h1, .hgroup h2{
 
@@ -243,8 +243,8 @@ figure {margin:0}
 
 }
 
-#content h2, #content h3, .widget header h2{
- color:#6f1f19;
+#content h2, #content h3{
+ color:#590743;
  border-left:10px solid #1a3f73;
  border-radius:15px 0;
  padding:5px 7.5px 0 5px;
@@ -252,59 +252,52 @@ figure {margin:0}
 }
 
 
-
-#blog{
-background-color: #742322;
-padding: 20px 0;
-border-top:  6px double #6f1f19;
-border-bottom: 6px double #b59c5a;
-border-radius:15px 0;
-
-}
-
 .post figure{
     grid-area: figure;
     margin:0 20px 0 0;
 }
 
 .post figcaption {
-    color:#6f1f19;
+    color:#590743;
 
 }
-.post header{
-    grid-area:header;
-    
-}
+
 
 .post h2 a {
-    color:#6f1f19;
+    color:#590743;
 
 }
 .post .post-content{
     grid-area:post-content;
-    color:#E6C363;
+    color:	#b59c5a;
 
 }
 
 .post .post-meta{
 grid-area: footer;
-color:#E6C363;
+color:	#b59c5a;
 
 
 
 }
 
 .post .post-meta a{
-    color:#b59c5a
+    color:#b59c5a;
 }
-aside .container{
-    display:grid;
-    grid-template-columns: 2fr 2fr;
-    gap:40px;
-    border:2px solid #1a3f73;
-    justify-content: center;
 
 
+content
+
+
+aside .container header h2{
+    color:#590743;
+    font-size:3rem;
+    text-shadow: 2.5px 2.5px #1a3f73;
+    text-align:center;
+    width: 100%;
+  margin-bottom: 20px;
+    padding:5px 7.5px 0 5px;
+    font-family: "Kings", cursive;
 }
 aside{
     background-color:#b59c5a;
@@ -312,8 +305,93 @@ aside{
     margin:20px;
 }
 
-aside :first-child{
-    border-right:5px dotted #1a3f73;
-    border-radius: 20px;
-    padding-right:20px;
+
+#content3 figure img{
+   max-width: 400px;
+   max-height: auto;
+   justify-content: center;
+   display: block;
+   margin: 0 auto;
+}
+
+#content3 figcaption{
+    text-align: center;
+    color:#590743;
+    font-size:.8rem;
+    text-transform: uppercase;
+    margin-top:5px;
+}
+
+#content3 h2 {
+    color:#590743;
+text-shadow: 1px 1px #b59c5a;
+border-left:10px solid #1a3f73;
+border-radius:15px 0;
+text-align:left;
+padding:5px 7.5px 0 5px;
+font-family: "Kings", cursive;
+
+}
+
+#content3 h3{
+    color: #590743;
+text-align:center;
+padding:5px 7.5px 0 5px;
+font-family: "Kings", cursive;
+
+}
+
+#queenly h2 {
+    color: #590743;
+    font-size:2.5rem;
+text-align:center;
+padding:5px 7.5px 0 5px;
+font-family: "Kings", cursive;}
+
+#queenly ul{
+    color:#1a3f73;
+    font-size:1.2rem;
+    list-style-type:none;
+    padding:0;
+    margin:20px 0;
+    text-align: center;
+
+}
+
+
+aside .container {
+  display: flex;
+  flex-wrap: wrap;       
+  justify-content: center; 
+  gap: 20px;             
+  max-width: 1000px;     
+  margin: 0 auto; 
+  border: 10px solid #004d24; 
+  border-radius: 10%;  
+}
+
+
+aside .container header {
+  flex: 0 0 100%;        
+  text-align: center;   
+  margin-bottom: 20px;
+}
+
+aside .widget {
+  flex: 1;               
+  min-width: 300px;      
+  max-width: 450px;     
+}
+
+aside figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+
+aside img {
+  max-width: 100%;
+  height: auto;
 }
