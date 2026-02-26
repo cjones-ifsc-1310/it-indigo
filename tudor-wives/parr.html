@@ -20,16 +20,16 @@
         <h2>Wife #6</h2>
       </div>
       <nav role="navigation">
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="aragon.html">Catherine of Aragon</a></li>
-          <li><a href="boleyn.html">Anne Boleyn</a></li>
-          <li><a href="seymour.html">Jane Seymour</a></li>
-          <li><a href="cleves.html">Anne of Cleves</a></li>
-          <li><a href="howard.html">Katherine Howard</a></li>
-          <li><a href="parr.html">Catherine Parr</a></li>
-        </ul>
-      </nav>
+  <ul>
+    <li><a href="home.html" data-hover="Henry VIII">Home</a></li>
+    <li><a href="aragon.html" data-hover="Divorced">Catherine of Aragon</a></li>
+    <li><a href="boleyn.html" data-hover="Beheaded">Anne Boleyn</a></li>
+    <li><a href="seymour.html" data-hover="Died">Jane Seymour</a></li>
+    <li><a href="cleves.html" data-hover="Divorced">Anne of Cleves</a></li>
+    <li><a href="howard.html" data-hover="Beheaded">Katherine Howard</a></li>
+    <li><a href="parr.html" data-hover="Survived">Catherine Parr</a></li>
+  </ul>
+</nav>
     </header>
      <section id="content" class="container">
       <h2>Catherine Parr</h2>
@@ -56,15 +56,18 @@ Henry grew increasingly frustrated with what he perceived as Catherine's inabili
   </section>
 <section id="queenly" class="container">
       <h2>Queenly Stats:</h2>
-      <ul>
-        <li><strong>Born:</strong></li> <li>16 December 1485</li>
-                <li><strong>Married:</strong></li><li>11 June 1509</li>
-                <li><strong>Reigned:</strong></li><li>1509-1533</li>
-        <li><strong>Divorced:</strong></li><li>23 May 1533</li>
-        <li><strong>Children:</strong></li><li>Mary I of England (1516-1558)</li>
-        <li><strong>Died:</strong></li><li>7 January 1536</li>
-      </ul>
+        <ul>
+    <li><strong>Born:</strong> <span class="stat-value" data-info="16 December 1485">Alcalá de Henares, Spain</span></li>
+    <li><strong>Married:</strong> <span class="stat-value" data-info="Greenwich Palace, 11 June 1509">To Henry VIII</span></li>
+    <li><strong>Reigned:</strong> <span class="stat-value" data-info="(1509-1533)">23 years, 11 months, 12 days</span></li>
+    <li><strong>Divorced:</strong> <span class="stat-value" data-info="23 May 1533">The 'Great Matter' annulment</span></li>
+    <li><strong>Children:</strong> <span class="stat-value" data-info="Mary I of England">Only one of six survived to adulthood</span></li>
+    <li><strong>Died:</strong> <span class="stat-value" data-info="6 January 1536">At Kimbolton Castle</span></li>
+  </ul>
+      <span>Click on any Category to Get Stats</span>
+      <button id="resetStats">Reset All Stats</button>
       </section>
+    
 
     <aside role="complementary">
       <div class="container">
@@ -111,6 +114,38 @@ Henry grew increasingly frustrated with what he perceived as Catherine's inabili
     </nav>
     <h6>&copy;2026 Chrissy Jones</h6>
   </main>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const stats = document.querySelectorAll('.stat-value');
+    const resetBtn = document.getElementById('resetStats');
+
+    // Handle Individual Clicks
+    stats.forEach(stat => {
+        stat.addEventListener('click', function(e) {
+            e.stopPropagation(); 
+            const current = this.textContent;
+            const hidden = this.getAttribute('data-info');
+            this.textContent = hidden;
+            this.setAttribute('data-info', current);
+            this.classList.toggle('active-stat');
+        });
+    });
+
+    // Handle Reset Button
+    resetBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); 
+        stats.forEach(stat => {
+            if (stat.classList.contains('active-stat')) {
+                const current = stat.textContent;
+                const original = stat.getAttribute('data-info');
+                stat.textContent = original;
+                stat.setAttribute('data-info', current);
+                stat.classList.remove('active-stat');
+            }
+        });
+    });
+});
+</script>
 </body>
 
 </html>
