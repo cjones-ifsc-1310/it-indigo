@@ -103,6 +103,7 @@ header nav li {
 
 
 body{
+  
 background-image:url(../img/tudor\ background.jpg);
 background-size: cover;
   background-repeat: no-repeat;
@@ -126,7 +127,8 @@ text-shadow: 2px 2px #590743;
     }
     main{
         background-color:#b59c5a;
-
+width:80vw;
+max-width:900px;
 
 text-align:left;
 color: #1a3f73;
@@ -350,11 +352,10 @@ border: 10px solid #004d24;
 
 }
 
-.text-col, .image-col2 {
+.text-col, .image-col, .image-col2 {
   flex: 1; 
 }
-
-
+ 
 .text-col {
   border-right: 5px solid #004d24;
   padding-right: 25px;
@@ -402,8 +403,8 @@ font-family: "Kings", cursive;
 #queenly {
     width: 500px;
     max-width: 900px;
-    margin: 20px auto; 
-    border: #004d24 solid 10px;
+    margin: 10px auto; 
+    border: #004d24 solid 30px;
     background: #1a3f73;
     border-radius: 100%;
     color: #b59c5a;
@@ -440,31 +441,26 @@ font-family: "Kings", cursive;
 
 .stat-value {
     cursor: pointer;
-    text-decoration: underline dotted #b59c5a; 
+    text-decoration: underline overline dotted #b59c5a; 
     transition: color 0.3s;
 }
 
 .stat-value:hover {
     color: #004d24;
+    text-decoration: wavy underline overline #004d24;
 }
 
-.active-stat {
-    color: #ffcc00; /* Color change when toggled */
+.stat-value
+ {
+    color: #ffffff; /* Color change when toggled */
     font-style: italic;
 }
 
 span{
     display:block;
     margin-top:10px;
-    font-size:.8rem;
-    color:#b59c5a;
+    font-size:1rem;
     text-shadow: 1px 1px #004d24;
-}
-
-#queenly ul {
-    list-style: none;         
-    padding: 0;
-    margin: 0;
 }
 
 #queenly h2 {
@@ -484,13 +480,20 @@ span{
 
 #queenly li {
     margin-bottom: 5px;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight:bold;
 }
 
 #queenly li .stat-value {
     color: #b59c5a;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
+
+#queenly li .stat-value:hover {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
 #resetStats {
 
   background-color: transparent; 
@@ -548,44 +551,51 @@ aside img {
 }
 
 
-/* Layout for the overall section */
+
 #content3 {
   display: flex;
   gap: 30px;
 }
 
-/* 2x2 Grid for the Image Gallery */
 .image-col2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-  grid-template-rows: auto auto;         /* Two rows */
-  gap: 20px;                             /* Space between photos */
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: auto auto;         
+  gap: 20px;                             
   align-items: start;
 }
 
-/* Ensure the titles span across both columns */
+
 .image-col2 h3, 
 .image-col2 h4 {
   grid-column: 1 / -1; 
   margin-bottom: 0;
 }
 
-/* Adjust image sizing for the grid cells */
+
 #content3 figure {
   margin: 0;
   padding: 10px;
 }
 
 #content3 figure img {
-  max-width: 75%; /* Changed from 75% to fit the grid cell better */
+  max-width: 75%; 
   height: auto;
-  border: 2px solid #590743; /* Optional: adds a royal frame */
+  border: 2px solid #590743; 
   display: block;
   margin: 0 auto;
 }
 
+img {
+    transition: transform 0.25s ease; /* Smooth transition for the scaling effect */
+    cursor: pointer; /* Changes cursor to a pointer to indicate clickability */
+}
 
-
+.enlarged {
+    transform: scale(1.5); /* Enlarges the image by 1.5 times */
+    position: relative; /* May help with positioning if needed */
+    z-index: 10; /* Ensures the enlarged image is on top of other content */
+}
 
 
 

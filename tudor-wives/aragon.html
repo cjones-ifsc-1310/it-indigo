@@ -92,18 +92,18 @@ Henry grew increasingly frustrated with what he perceived as Catherine's inabili
     <aside role="complementary">
       <div class="container">
         <header>
-        <h2>The Queen Crown Awards</h2>
+        <h2>The Queen's Crown Awards</h2>
         </header>
         <article class="widget">
           <figure>
-          <img src="assets/img/Pious.jpg" alt="Queen Award">
+          <img src="assets/img/Pious.jpg" alt="Queen Award" onclick="toggleEnlarge(this)" id="enlargeableImage">
           <figcaption>The Most Pious</figcaption>
         </figure>
           <p>One very well-known fact about Catherine of Aragon is that she was the most pious of all the Tudor Queens. She lived her life guided by the Catholic Church and was known for her devotion to her faith. A much lesser known fact is that after several of her miscarriages, Catherine took to wearing a hairshirt (a garment made of coarse animal hair, typically goat or camel, worn directly against the skin to cause constant irritation and discomfort) 24/7 as pennance for whatever sins she might have committed against her faith or God.  <a href="https://www.worldhistory.org/Catherine_of_Aragon/">Read More &raquo;</a></p>
                   </article>
         <article class="widget">
           <figure>
-          <img src="assets/img/Obstinance.jpg" alt="Queen Award">
+          <img src="assets/img/Beliefs.jpg" alt="Queen Award" onclick="toggleEnlarge(this)" id="enlargeableImage">
           <figcaption>Most Obstinate & Steadfast</figcaption>
         </figure>
           <ul> 
@@ -139,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const stats = document.querySelectorAll('.stat-value');
     const resetBtn = document.getElementById('resetStats');
 
-    // Handle Individual Clicks
     stats.forEach(stat => {
         stat.addEventListener('click', function(e) {
             e.stopPropagation(); 
@@ -151,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle Reset Button
+    
     resetBtn.addEventListener('click', (e) => {
         e.stopPropagation(); 
         stats.forEach(stat => {
@@ -162,9 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 stat.setAttribute('data-info', current);
                 stat.classList.remove('active-stat');
             }
+            function toggleEnlarge(img) {
+    img.classList.toggle("enlarged"); 
+}
         });
     });
 });
+
+
 </script>
 </body>
 
