@@ -102,16 +102,18 @@ header nav li {
 }
 
 
-body{
-  
-background-image:url(../img/tudor\ background.jpg);
-background-size: cover;
+
+
+body {
+  background-image: url("../img/tudorbackground.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-font-family: "Quicksand", sans-serif;
-
+  font-family: "Quicksand", sans-serif;
 }
+
+
 
 a{
     color:#1a3f73;
@@ -128,7 +130,7 @@ text-shadow: 2px 2px #590743;
     main{
         background-color:#b59c5a;
 width:80vw;
-max-width:900px;
+max-width:1400px;
 
 text-align:left;
 color: #1a3f73;
@@ -220,10 +222,6 @@ max-width: 800px;
 }
 
 
-
-figure {margin:0}
-
-
 #content-home time, figcaption{
   text-transform:uppercase;
   font-size:.6rem;
@@ -253,7 +251,7 @@ max-width: 500px;
  font-size:.8rem;
 }
 
-figure {margin:0}
+
 
 
 #content2 time, figcaption{
@@ -314,30 +312,6 @@ color:#1a3f73;
     color:#b59c5a;
 }
 
-
-aside .container header h2{
-    color:#590743;
-    font-size:3rem;
-    text-shadow: 2.5px 2.5px #1a3f73;
-    text-align:center;
-    width: 100%;
-  margin-bottom: 20px;
-    padding:5px 7.5px 0 5px;
-    font-family: "Kings", cursive;
-}
-aside{
-    background-color:#b59c5a;
-    width:95%;
-    margin:20px;
-}
-
-figcaption{
-    text-align: center;
-    color:#590743;
-    font-size:1rem;
-    text-transform: uppercase;
-    margin-top:5px;
-}
 
 #content3.container {
   display: flex;
@@ -513,44 +487,6 @@ span{
   color: #1a3f73;
 }
 
-aside .container {
-  display: flex;
-  flex-wrap: wrap;       
-  justify-content: center; 
-  gap: 20px;             
-  max-width: 1000px;     
-  margin: 0 auto; 
-  border: 10px solid #004d24; 
-  border-radius: 10%;  
-}
-
-
-aside .container header {
-  flex: 0 0 100%;        
-  text-align: center;   
-  margin-bottom: 20px;
-}
-
-aside .widget {
-  flex: 1;               
-  min-width: 300px;      
-  max-width: 450px;     
-}
-
-aside figure {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   
-  text-align: center;
-  margin: 0 0 15px 0;
-}
-
-aside img {
-  max-width: 100%;
-  height: auto;
-}
-
-
 
 #content3 {
   display: flex;
@@ -566,13 +502,32 @@ aside img {
 }
 
 
+.image-col2 .enlargeable {
+  cursor: pointer;
+    transition: filter 0.3s ease;
+  max-width: 100%; /* Never larger than its original pixels */
+  height: auto;    /* Keep proportions correct */
+}
+
+.image-col2 .enlargeable:hover {
+    filter: brightness(1.1);
+    transform: scale(3); 
+
+}
 .image-col2 h3, 
 .image-col2 h4 {
   grid-column: 1 / -1; 
   margin-bottom: 0;
+  text-align: center;
 }
 
+.image-col2 h3{
+  font-size:2rem;
 
+}
+.image-col2 h4 {
+        font-weight: normal;
+}
 #content3 figure {
   margin: 0;
   padding: 10px;
@@ -586,20 +541,290 @@ aside img {
   margin: 0 auto;
 }
 
-img {
-    transition: transform 0.25s ease; /* Smooth transition for the scaling effect */
-    cursor: pointer; /* Changes cursor to a pointer to indicate clickability */
+#awards figcaption {
+  margin-top: 50px;
+  font-size: 1.2rem;
+  font-weight:bolder;
+  color: #590743;
+  background-color:#b59c5a;
+  border: 5px #371a4f double;
+  text-align: center;
+  text-decoration: underline;
 }
 
-.enlarged {
-    transform: scale(1.5); /* Enlarges the image by 1.5 times */
-    position: relative; /* May help with positioning if needed */
-    z-index: 10; /* Ensures the enlarged image is on top of other content */
+aside p{
+    color:#590743;
+    font-size:20px;
+    font-family: "Kings", cursive;
+    text-align: center;
+    margin-top: 0;
+}
+
+aside .card-back p{
+    color: #590743;
+    font-size: 20px;
+    font-family: "Kings", cursive;
+    text-align: left;
+    padding: 20px;
+    overflow-y: auto;
+} 
+
+.card-back ul, .card-back p{
+    color: #590743;
+    font-size: 20px;
+    font-family: "Kings", cursive;
+    padding: 20px;
+    margin: 0;
+    text-align: left;
+    overflow-y: auto;
+} 
+
+.card-back{
+    background-image:url("../img/tudorbackground.jpg");
+
+}
+
+.card-front {
+border:#b59c5a 8px dotted;
+padding:5px;
+}
+.card-back{
+border:#590743 8px dotted;
+padding:5px;
+
 }
 
 
+aside header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the h2 and h3 horizontally */
+  text-align: center;
+}
 
-#colophon{
+
+aside {
+  background-color: #1a3f73;
+  width: 90%;
+  max-width:1200px;
+  margin: 40px auto;
+  padding: 40px 0;
+  border:#371a4f 20px solid;
+  box-sizing: border-box;
+
+  min-height: 600px;
+
+  display: flex;
+}
+
+aside .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* THIS is the key */
+  align-items: center;
+  width: 100%;
+}
+
+aside h2{
+  color:#b59c5a;
+  text-shadow: 1px 1px #590743;
+  font-family: "Kings", cursive;
+  font-size:2rem;
+  border-right: 6px solid #371a4f;
+  border-left:6px solid #371a4f;
+  box-shadow:0px 35px 55px #1a3f73;
+  border-radius: 15px 15px 0 0;
+  display: inline-flex;
+  margin-right:10px;
+  margin-top:-20px;
+  margin-bottom:-10px;
+  margin-left:10px;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+
+aside h3{
+  background-color:#590743;
+  border: #371a4f solid 10px;
+border-radius:50px;
+  color:#b59c5a;
+  font-size: 1.5rem;
+font-weight: bolder;
+width:max-content;
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+}
+
+.image-col2 h3 {
+    margin-bottom: 0; /* Remove space below h3 */
+    text-align: center;
+}
+
+.image-col2 h4 {
+    margin-top: 5px; /* Tiny gap above h4 */
+    font-weight: normal;
+    color: #555; /* Optional: subtle color for the reign dates */
+}
+
+.widget-wrapper {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center; 
+  align-items:center;  
+  gap: 60px;
+  width:100%;
+  
+
+}
+
+aside .widget {
+display: block;
+  width: 300px; 
+  max-width:300px;
+  flex: 0 0 300px;             
+}
+
+#awards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 1000;
+}
+
+.modal-inner-box { 
+  display: flex;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 80%;
+  gap: 20px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 50%;
+  max-height: 85%;
+  object-fit: contain;
+  animation: zoomIn 0.4s ease-in-out;
+}
+
+.modal-text {
+  flex: 1;
+  color: #590743;
+  font-size: 30px;
+  font-family: "Kings", cursive;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px; right: 40px;
+  color: #fff;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/*card flipping*/
+
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+  height: 450px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 12px #1a3f73;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  color: #590743;
+  font-size:20px;
+  font-family: "Kings", cursive;
+  text-align: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+
+.modal-container {
+  display: flex;
+  max-width: 90%;
+  max-height: 80%;
+  gap: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* Footer Styling */
+
+  #colophon{
 background-image:url(../img/tudor-rose.png);
 background-size: cover;
 background-repeat:no-repeat;

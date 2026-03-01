@@ -80,49 +80,108 @@ Henry grew increasingly frustrated with what he perceived as Catherine's inabili
 
   </div>
   <div class="image-col2">
+    
     <h3>Queen Elizabeth Tudor I</h3>
     <h4 style="text-align:center;">Reign: 1558-1603</h4>
     <figure>
-      <img src="assets/img/Elizabeth 1.png" alt="Elizabeth I of England" onclick="toggleEnlarge(this)" id="enlargeableImage">
+      <img src="assets/img/Elizabeth 1.png" alt="Elizabeth I of England" class="enlargeable">
       <figcaption>The Darnley Portrait, c. 1575, unknown artist. </figcaption>
     </figure>
     <figure>
-      <img src="assets/img/Elizabeth2.png" alt="Elizabeth I of England" onclick="toggleEnlarge(this)" id="enlargeableImage">
+      <img src="assets/img/Elizabeth2.png" alt="Elizabeth I of England" class="enlargeable">
       <figcaption>The Rainbow Portrait,  Isaac Oliver, c. 1600. </figcaption>
     </figure>
     <figure>
-      <img src="assets/img/Elizabeth 3.png" alt="Elizabeth I of England" onclick="toggleEnlarge(this)" id="enlargeableImage">
+      <img src="assets/img/Elizabeth 3.png" alt="Elizabeth I of England" class="enlargeable">
       <figcaption>the Coronation Portrait, c. 1600, unknown artist </figcaption>
     </figure>
     <figure>
-      <img src="assets/img/Elizabeth 4.png" alt="Elizabeth I of England" onclick="toggleEnlarge(this)" id="enlargeableImage">
+      <img src="assets/img/Elizabeth 4.png" alt="Elizabeth I of England" class="enlargeable">
       <figcaption>The Ermine Portrait, c. 1585, likely by William Segar. </figcaption>
     </figure>
+    
   </div>
 </section>
 
     <aside role="complementary">
-      <div class="container">
-        <header>
-        <h2>The Queen's Crown Awards</h2>
-        </header>
-        <article class="widget">
-          <figure>
-          <img src="assets/img/Church.jpg" alt="Queen Award" onclick="toggleEnlarge(this)" id="enlargeableImage">
-          <figcaption>For Killing Catholic Tradition in England</figcaption>
-        </figure>
-          <p>One very well-known fact about Catherine of Aragon is that she was the most pious of all the Tudor Queens. She lived her life guided by the Catholic Church and was known for her devotion to her faith. A much lesser known fact is that after several of her miscarriages, Catherine took to wearing a hairshirt (a garment made of coarse animal hair, typically goat or camel, worn directly against the skin to cause constant irritation and discomfort) 24/7 as pennance for whatever sins she might have committed against her faith or God.  <a href="https://www.worldhistory.org/Catherine_of_Aragon/">Read More &raquo;</a></p>
-                  </article>
-        <article class="widget">
-          <figure>
-          <img src="assets/img/Executed.jpg" alt="Queen Award" onclick="toggleEnlarge(this)" id="enlargeableImage">
-          <figcaption>For the shortest Reign. Like, ever.</figcaption>
-        </figure>
-          <p>Catherine continues to fight for her and Mary's rights and refuses to be addressed as anything other than Queen of England, until her death in 1936.</p>
-          <a href="https://www.historyonthenet.com/catherine-of-aragon-timeline">Read More &raquo;</a></p>
-        </article>
-      </div>
-    </aside>
+  <div class="container" id="awards">
+    <header>
+      <h2>The Queen's Crown Awards</h2>
+      <h3>Click on the image for a closer look or on the caption for award qualifications!</h3>
+    </header>
+
+    <div class="widget-wrapper">
+
+      <article class="widget">
+        <div class="card" onclick="flipCard(this)">
+          <div class="card-inner">
+
+            <figure class="card-front">
+              <img src="assets/img/Escape.jpg"
+                   alt="Queen Award"
+                   class="enlargeable">
+              <figcaption>Escape Artist</figcaption>
+            </figure>
+
+            <div class="card-back">
+              <p>
+                One very well-known fact about Catherine of Aragon is that she was the most pious of all the Tudor Queens.
+                She lived her life guided by the Catholic Church and was known for her devotion to her faith.
+                A much lesser known fact is that after several of her miscarriages, Catherine took to wearing a hairshirt
+                (a garment made of coarse animal hair, typically goat or camel, worn directly against the skin to cause
+                constant irritation and discomfort) 24/7 as penance for whatever sins she might have committed against
+                her faith or God.
+                <a href="https://www.worldhistory.org/Catherine_of_Aragon/">
+                  Read More &raquo;
+                </a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </article>
+
+
+      <!-- SECOND CARD -->
+      <article class="widget">
+        <div class="card" onclick="flipCard(this)">
+          <div class="card-inner">
+
+            <figure class="card-front">
+              <img src="assets/img/Cool.jpg"
+                   alt="Queen Award"
+                   class="enlargeable">
+              <figcaption>Women's Lib & Free Thought</figcaption>
+            </figure>
+
+            <div class="card-back">
+              <ul>
+                <li>1525 - Anne Boleyn appears at court</li>
+                <li>1526 - Henry's Great Matter is the talk of the court</li>
+                <li>1527 - The Pope is contacted about the Great Matter and sends a legate to oversee an ecclesiastical court to settle the matter.</li>
+                <li>1531 - Henry formally leaves Catherine</li>
+                <li>1533 - January - Henry marries Anne Boleyn</li>
+                <li>1533 - May - Marriage to Catherine is officially annulled</li>
+                <li>1533 - Mary stripped of her title of Princess and declared illegitimate</li>
+              </ul>
+
+              <p>
+                Catherine continues to fight for her and Mary's rights and refuses to be addressed as anything
+                other than Queen of England, until her death in 1536.
+              </p>
+
+              <a href="https://www.historyonthenet.com/catherine-of-aragon-timeline">
+                Read More &raquo;
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</aside>
      <footer id="colophon" role="contentinfo">
   <nav role="navigation" class="footer">
     <div class="footer-buttons">
@@ -137,38 +196,77 @@ Henry grew increasingly frustrated with what he perceived as Catherine's inabili
     </nav>
     <h6>&copy;2026 Chrissy Jones</h6>
   </main>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const stats = document.querySelectorAll('.stat-value');
-    const resetBtn = document.getElementById('resetStats');
+ <script>
+function toggleEnlarge(element) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalText = document.getElementById("modalText");
 
-    // Handle Individual Clicks
-    stats.forEach(stat => {
-        stat.addEventListener('click', function(e) {
-            e.stopPropagation(); 
-            const current = this.textContent;
-            const hidden = this.getAttribute('data-info');
-            this.textContent = hidden;
-            this.setAttribute('data-info', current);
-            this.classList.toggle('active-stat');
-        });
-    });
+  
+  
+  // Find the text from the back of the specific card you clicked
+  const cardBack = element.closest('.card').querySelector('.card-back').innerHTML;
 
-    // Handle Reset Button
-    resetBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); 
-        stats.forEach(stat => {
-            if (stat.classList.contains('active-stat')) {
-                const current = stat.textContent;
-                const original = stat.getAttribute('data-info');
-                stat.textContent = original;
-                stat.setAttribute('data-info', current);
-                stat.classList.remove('active-stat');
-            }
-        });
-    });
-});
+  if (modal && modalImg) {
+    modal.style.display = "flex";
+    modalImg.src = element.src;
+    modalText.innerHTML = cardBack; // This injects the text into the modal
+  }
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+  // Reset all cards to the front side when closing the modal
+  document.querySelectorAll('.card').forEach(card => {
+    card.classList.remove('is-flipped');
+  });
+}
 </script>
+<script>
+function flipCard(cardElement) {
+  // This triggers the 3D flip animation
+  cardElement.classList.toggle('is-flipped');
+} 
+</script>
+<script>// Prevent image clicks from flipping card
+document.querySelectorAll('.enlargeable').forEach(img => {
+  img.addEventListener('click', function (e) {
+    e.stopPropagation(); // stops card flip
+    openModal(this.src);
+  });
+});
+
+function openModal(src) {
+  const modal = document.createElement('div');
+  modal.classList.add('modal-container');
+
+  modal.innerHTML = `
+    <div class="modal-inner-box">
+      <span class="close-btn">&times;</span>
+      <img src="${src}" class="modal-content">
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  modal.querySelector('.close-btn').addEventListener('click', () => {
+    modal.remove();
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.remove();
+    }
+  });
+}
+</script>
+<<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close-btn">&times;</span> <!-- "&times;" creates the "×" symbol -->
+  <div class="modal-container" onclick="event.stopPropagation()"> <!-- stopPropagation prevents closing when clicking inside the box -->
+    <img class="modal-content" id="modalImg">
+    <div id="modalText" class="modal-text"></div>
+  </div>
+</div>
 </body>
 
 </html>
