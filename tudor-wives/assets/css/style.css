@@ -111,13 +111,11 @@ body {
   background-position: center center;
   background-attachment: fixed;
   font-family: "Quicksand", sans-serif;
+  font-size: 18px;
 }
 
+body a{color:#004d24}
 
-
-a{
-    color:#1a3f73;
-}
    .primary h2{
         color:#b59c5a;
         font-size: 2.5rem;
@@ -192,19 +190,23 @@ border-left:10px solid #1a3f73;
 border-radius:15px 0;
 text-align:left;
 padding:5px 7.5px 0 5px;
+font-size:2rem;
 font-family: "Kings", cursive;
 
 }
 
 #content h3{
     color:#590743;
-border-left:3px solid #1a3f73;
-border-radius:15px 0;
+box-shadow:#1a3f73 0 16px 32px;
+border-radius: 50%;
+display:inline-block;
 text-align:left;
-padding:5px 7.5px 0 5px;
-font-family: "Kings", cursive;
+padding:20px;
+font-size:1.5rem;
+font-family: "Quicksand", sans-serif;
 
 }
+
 
 #content-home {
 display:flex;
@@ -248,7 +250,8 @@ max-width: 500px;
 #content2 .post{
  box-shadow: 0 16px 32px #1a3f73;
  padding:10px;
- font-size:.8rem;
+ color:#590743;
+ font-size:1rem;
 }
 
 
@@ -273,13 +276,6 @@ max-width: 500px;
 
 }
 
-#content h2, #content h3{
- color:#590743;
- border-left:10px solid #1a3f73;
- border-radius:15px 0;
- padding:5px 7.5px 0 5px;
-
-}
 
 
 .post figure{
@@ -288,7 +284,29 @@ max-width: 500px;
 
 .post figcaption {
     color:#590743;
+    font-size:15px;
 
+
+}
+
+
+
+#content figure {
+  text-align: center;
+  margin: 30px auto;
+}
+
+#content figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 35%;
+}
+
+#content figure figcaption {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #590743;
 }
 
 
@@ -298,7 +316,7 @@ max-width: 500px;
 }
 .post .post-content{
     grid-area:post-content;
-    color:	#1a3f73;
+    color: #590743;
 
 }
 
@@ -309,7 +327,7 @@ color:#1a3f73;
 }
 
 .post .post-meta a{
-    color:#b59c5a;
+    color:#004d24;
 }
 
 

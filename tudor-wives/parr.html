@@ -218,7 +218,38 @@ function openModal(src) {
   });
 }
 </script>
-<<div id="imageModal" class="modal" onclick="closeModal()">
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const stats = document.querySelectorAll(".stat-value");
+  const resetBtn = document.getElementById("resetStats");
+
+  stats.forEach(stat => {
+    stat.addEventListener("click", function () {
+      const originalText = this.textContent;
+      const newText = this.getAttribute("data-info");
+
+      // Swap text
+      this.textContent = newText;
+
+      // Store original in data-original if not already stored
+      if (!this.dataset.original) {
+        this.dataset.original = originalText;
+      }
+    });
+  });
+
+  resetBtn.addEventListener("click", function () {
+    stats.forEach(stat => {
+      if (stat.dataset.original) {
+        stat.textContent = stat.dataset.original;
+      }
+    });
+  });
+
+});
+</script>
+<div id="imageModal" class="modal" onclick="closeModal()">
   <span class="close-btn">&times;</span> <!-- "&times;" creates the "×" symbol -->
   <div class="modal-container" onclick="event.stopPropagation()"> <!-- stopPropagation prevents closing when clicking inside the box -->
     <img class="modal-content" id="modalImg">
