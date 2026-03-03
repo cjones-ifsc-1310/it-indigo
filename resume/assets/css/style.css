@@ -1,0 +1,55 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Base */
+
+body {
+  font-family: "Merriweather", serif;
+  background: #374e5a;
+  overflow: auto;
+}
+
+.col{
+  padding:20px;
+  border:1px solid #c0c0c0;
+  border-radius:6px;
+}
+
+.col:nth-child(odd) {
+  background-color: #8fb87f;
+}
+.col p {
+  color: #fff;
+  margin: 0px;
+  text-shadow: 1px 1px #000;
+}
+.fancy {
+  display: none;
+}
+
+/*Base CSS*/
+
+
+.row{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+@media screen and (min-width:768px){
+  .row{
+     grid-template-columns:1fr 1fr;
+  }
+}
+
+@media screen and (min-width:992px){
+    .row{
+     grid-template-columns:repeat(4, 1fr);
+  }
+}

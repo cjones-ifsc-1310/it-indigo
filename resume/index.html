@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> It Indigo | Chrissy Jones</title>
+<meta charset="utf-8"/>
+<meta name="description" content="Christine Jones Resume"/>
+<meta name="author" content="Christine Jones"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<header class="container" id="top">
+  <!-- Main navigation -->
+  <nav class="primary">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Main -->
+<main itemscope itemtype="https://schema.org/Person" class="container">
+  <h1 class="page-title" itemprop="name">Christine M Jones</h1>
+
+  <section id="about">
+    <h2>Personal Details</h2>
+
+    <div class="bio">
+      <img itemprop="image" src="assets/img/Headshot26.jpg" alt="Christine Jones">
+      <p itemprop="description">
+        Short Bio Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti maxime distinctio numquam atque? Accusantium voluptatum alias similique voluptatibus! Sunt sit reiciendis earum, harum iusto accusantium aspernatur ullam tenetur, fuga fugit, quae voluptatem! Iste aliquid veritatis accusantium et cumque minima molestiae ducimus officiis. Beatae ad consequuntur fuga deleniti atque tempore error.
+      </p>
+    </div>
+
+    <dl class="details">
+      <dt>Name</dt>
+      <dd itemprop="name">
+        <span itemprop="givenName">Christine</span> <span itemprop="Jones">Last</span>
+      </dd>
+
+      <dt>Date of birth</dt>
+      <dd><time itemprop="birthDate" datetime="2000-10-12">08/09/1980</time></dd>
+
+      <dt>Nationality</dt>
+      <dd itemprop="nationality">American</dd>
+
+      <dt>Location</dt>
+      <!-- Keep original text, but model as Place for better schema correctness -->
+      <dd itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+        <span itemprop="name">Arkansas</span>
+      </dd>
+
+      <dt>Telephone</dt>
+      <dd>
+        <!-- tel: should be digits; keep visible text as-is -->
+        <a itemprop="telephone" href="tel:5555555555">555.555.555.5555</a>
+      </dd>
+
+      <dt>Email</dt>
+      <dd>
+        <a itemprop="email" href="mailto:email@mail.com">email@mail.com</a>
+      </dd>
+
+      <dt>Address</dt>
+      <dd itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">2801 South University</span>
+        <span itemprop="addressLocality">Little Rock</span>
+        <span itemprop="postalCode">72204</span>
+        <span itemprop="addressCountry">USA</span>
+      </dd>
+    </dl>
+
+    <ul class="related-links">
+      <li><a itemprop="sameAs" rel="me" href="https://github.com/https://github.com/cjones-ifsc-1310">github</a></li>
+      <li><a itemprop="sameAs" rel="me" href="http://linkedin.com/profile">linkedin</a></li>
+      <li><a itemprop="url" href="assets/CJonesResume1225.pdf" download>pdf resume</a></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li class="skill" itemprop="knowsAbout">HTML</li>
+      <li class="skill" itemprop="knowsAbout">PHP</li>
+      <li class="skill" itemprop="knowsAbout">Java</li>
+      <li class="skill" itemprop="knowsAbout">Scss</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <!-- current job -->
+    <article class="job">
+      <!-- jobTitle is valid on Person; this is still within Person scope -->
+      <h3 itemprop="jobTitle">Lead Web Developer</h3>
+
+      <!-- worksFor is valid on Person -->
+      <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Company Name 1</span>
+        <span>February 2010 - Present</span>
+
+        <p itemprop="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
+
+        <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <a itemprop="url" href="http://link-to-company.com">Company URL</a>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Anywhere,USA</span>
+          </span>
+        </span>
+      </div>
+    </article>
+
+    <!-- Previous Jobs -->
+    <article class="job">
+      <h3 itemprop="jobTitle">Senior Developer</h3>
+
+      <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Company Name 2</span>
+
+        <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <a itemprop="url" href="http://link-to-company.com">Company URL</a>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Anywhere,USA</span>
+          </span>
+        </span>
+      </span>
+
+      <!-- Keep original visible date format; Google won't bind it perfectly, but it won't warn -->
+      <div>
+        <span>February 2006</span> -
+        <span>February 2009</span>
+      </div>
+
+      <p itemprop="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
+    </article>
+
+    <article class="job">
+      <h3 itemprop="jobTitle">Senior Developer</h3>
+
+      <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Company Name 2</span>
+
+        <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <a itemprop="url" href="http://link-to-company.com">Company URL</a>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Anywhere,USA</span>
+          </span>
+        </span>
+      </span>
+
+      <div>
+        <span>February 2006</span> -
+        <span>February 2009</span>
+      </div>
+
+      <p itemprop="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
+    </article>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <article class="certificate" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+      <h3 itemprop="description"><abbr title="Master of Science">BA</abbr> Web Design and Development</h3>
+      <span itemprop="name">University name 1</span>
+      <span itemprop="location" itemscope>Anywhere, USA</span>
+      <span>2005-2007</span>
+    </article>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div id="copyright">
+    &copy; 2026 Name | <a href="#top">Top</a>
+  </div>
+</footer>
+ 
