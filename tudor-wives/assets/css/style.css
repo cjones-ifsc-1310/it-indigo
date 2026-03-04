@@ -209,28 +209,34 @@ font-family: "Quicksand", sans-serif;
 
 
 #content-home {
-display:flex;
-flex-direction:row;
-justify-content:center;
-max-width: 800px;
-
-
+  display: flex;
+  justify-content: space-between; /* spreads columns evenly */
+  width: 75%;
+  margin: 0 auto; /* centers the section */
+  gap: 20px; /* spacing between columns */
 }
 
-#content-home .post{
- box-shadow: 0 4px 8px #1a3f73;  
- padding:10px;
- font-size:.8rem;
+  #content-home .post {
+  flex: 1; /* makes all three equal width */
+  box-shadow: 0 4px 8px #1a3f73;
+  padding: 10px;
+  font-size: .8rem;
 }
 
-
-#content-home time, figcaption{
-  text-transform:uppercase;
-  font-size:.6rem;
-
+@media (max-width: 900px) {
+  #content-home {
+    flex-direction: column;
+  }
 }
 
-#content-home a{color:#004d24;}
+     #content-home time, figcaption{
+       text-transform:uppercase;
+         font-size:.6rem;
+
+         }
+
+         #content-home a{color:#004d24;}
+        
 
 .hgroup h1, .hgroup h2{
 
@@ -570,13 +576,7 @@ span{
   text-decoration: underline;
 }
 
-aside p{
-    color:#590743;
-    font-size:20px;
-    font-family: "Kings", cursive;
-    text-align: center;
-    margin-top: 0;
-}
+
 
 aside .card-back p{
     color: #590743;
@@ -612,6 +612,41 @@ padding:5px;
 
 }
 
+aside .container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;   /* ← this is what you're missing */
+}
+
+
+aside .hwidget {
+  flex: 1;
+  margin-top:50px;              /* equal width */
+}
+
+aside .hwidget{
+  border-left:3px solid #590743;
+  border-right:3px solid #590743;
+  border-top:#004d24 3px solid;
+  border-bottom:#004d24 3px solid;
+
+
+}
+
+aside .gwidget{
+  flex: 1;
+}
+
+aside .widget {
+  border-left: 3px solid #590743;
+  border-right: 3px solid #590743;
+  border-top: 3px solid #004d24;
+  border-bottom: 3px solid #004d24;
+  border-radius: 30px;
+  padding: 20px;
+}
 
 aside header {
   width: 100%;
@@ -624,7 +659,7 @@ aside header {
 
 aside {
   background-color: #1a3f73;
-  width: 90%;
+  width: 95%;
   max-width:1200px;
   margin: 40px auto;
   padding: 40px 0;
@@ -638,11 +673,19 @@ aside {
 
 aside .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;   /* THIS is the key */
-  align-items: center;
-  width: 100%;
+  gap: 30px;
 }
+
+
+aside p{
+    color:#b59c5a;
+    text-shadow: 1px 1px #371a4f;
+    font-size:24px;
+    font-family: "Kings", cursive;
+    text-align: center;
+    margin-top: 0;
+}
+
 
 aside h2{
   color:#b59c5a;
@@ -655,25 +698,19 @@ aside h2{
   border-radius: 15px 15px 0 0;
   display: inline-flex;
   margin-right:10px;
-  margin-top:-20px;
-  margin-bottom:-10px;
+  margin-top:0px;
+  margin-bottom:20px;
   margin-left:10px;
   padding-left:10px;
   padding-right:10px;
 }
 
 
-aside h3{
-  background-color:#590743;
-  border: #371a4f solid 10px;
-border-radius:50px;
-  color:#b59c5a;
-  font-size: 1.5rem;
-font-weight: bolder;
-width:max-content;
-text-align:center;
-margin-left:auto;
-margin-right:auto;
+
+@media (max-width: 900px) {
+  aside .container {
+    flex-direction: column;
+  }
 }
 
 .image-col2 h3 {
@@ -696,13 +733,6 @@ margin-right:auto;
   width:100%;
   
 
-}
-
-aside .widget {
-display: block;
-  width: 300px; 
-  max-width:300px;
-  flex: 0 0 300px;             
 }
 
 #awards {
