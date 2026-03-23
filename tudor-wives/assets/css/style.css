@@ -19,7 +19,7 @@ img{
 .container{
 margin:auto;
 padding:20px;
-
+background: transparent;
 }
 
 
@@ -126,7 +126,7 @@ max-width:1400px;
 text-align:left;
 color: #1a3f73;
 margin:40px auto;
-
+padding-bottom: 20px;
 
     }
     div.hgroup{
@@ -207,12 +207,16 @@ font-family: "Quicksand", sans-serif;
 {font-size: .8rem;
 }
 
-#content-home .post{
-  display:flex;
+#content-home .post {
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #b59c5a;
+  border: 3px solid #04273a;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 8px 20px #04273a;
 }
 
 #content-home .post header h2{
@@ -226,9 +230,9 @@ margin-top:auto;
 }
 
 #content-home {
-  display: block;
-  justify-content: center; 
-  align-items: stretch;   
+  display: flex;
+  flex-direction:column; 
+  align-items: center;   
   gap: 20px;
  border: 8px double #590743;
   border-radius: 15px;           
@@ -240,7 +244,7 @@ margin-top:auto;
 .post-grid {
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  flex-wrap:wrap;
   gap: 20px;
 }
 
@@ -269,23 +273,8 @@ margin-top:auto;
 }
 
 
-#content-home .post {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-shadow: 0 4px 8px #1a3f73;
-  padding: 10px;
-  font-size: 1rem;
-}
 
-#content-home .post {
-  background-color: #b59c5a;   /* 🔥 contrast layer */
-  border: 3px solid #04273a;
-  border-radius: 10px;
-  padding: 15px;
 
-  box-shadow: 0 8px 20px #04273a; 
-}
 
 @media (max-width: 900px) {
   #content-home {
@@ -681,6 +670,28 @@ padding:5px;
 
 }
 
+  .card-front img {
+    max-height: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.card-front figcaption {
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.card-front figcaption {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-front figcaption:hover {
+  color: #004d24;
+  text-decoration: underline;
+  transform: scale(1.05);
+}
 
 aside {
   background-color: #1a3f73;
@@ -715,7 +726,7 @@ aside header {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers the h2 and h3 horizontally */
+  align-items: center;
   text-align: center;
 }
 
@@ -737,9 +748,6 @@ aside h2{
   padding-right:10px;
 }
 
-main {
- padding-bottom: 20px;
-}
 
 @media (max-width: 900px) {
   aside .container {
@@ -751,6 +759,7 @@ main {
   display: flex;
   gap: 30px;
   justify-content: center;
+  align-items: stretch;
 }
 
 #henry {
@@ -760,6 +769,8 @@ main {
 .column {
   flex: 1;
   max-width: 500px;
+  display:flex;
+  flex-direction: column;
 }
 
 .column header {
@@ -772,6 +783,7 @@ main {
   border-top: 3px solid #b59c5a;
   border-bottom: 3px solid #b59c5a;
   padding: 20px;
+  flex-grow:1;
 }
 
 
@@ -866,14 +878,15 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;              /* 🔥 don't stretch full height */
-  min-height: 100%;          /* keeps coverage without overlap issues */
+  height: 100%;
+
   padding: 20px;
   background-image: url("../img/tudorbackground.jpg");
-  z-index: 2;
 
   transform: translateX(-100%);
   transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+  overflow-y: auto;
 }
 
 .sliding-content.active {
@@ -892,9 +905,9 @@ main {
    z-index: 1;
 }
 
-.post:has(.sliding-content.active) {
-  z-index: 10;
-} 
+.sliding-content.active {
+  z-index: 20;
+}
 
 
 .wrapper-home:hover .click-target {
@@ -915,59 +928,67 @@ main {
     color: #590743; 
 }
 
-#widget-wrapper {
+.widget-wrapper {
   display: flex;
   flex-wrap:wrap;
   justify-content: center; 
-  align-items:center;  
-  gap: 60px;
+  align-items:stretch;  
+  gap: 40px;
   width:100%;
   
 
 }
 
 aside .widget {
-  display: block;
-  width: 300px; 
-  max-width: 300px;
-  flex: 0 0 300px;             
+  max-width: 400px;
+  flex: 0 0 400px;           
+
+
+}
+
+aside p{
+
+font-family: "Quicksand",sans-serif;
 }
 
 #awards {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align:center;
 }
 
 .modal-container {
+  position: fixed;
+  inset: 0;                         
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 90%;
-  max-height: 80%;
-  gap: 20px;
-  position: fixed;
-  top: 0; left: 0;
-  background-color: rgba(0,0,0,0.1);
+
+  background-color: rgba(0,0,0,0.6);
   z-index: 1000;
 }
 
 
-
-.modal-inner-box { 
+.modal-inner-box {
   display: flex;
-  padding: 20px;
-  max-width: 90%;
-  max-height: 80%;
-  gap: 20px;
-  border-radius: 8px;
+  justify-content: center;   /* 🔥 centers the group */
   align-items: center;
+  gap: 20px;
+  padding: 20px;
+margin:auto;
+  max-width: 80%;
+  max-height: 80%;
+
+  background: #b59c5a;  
+  border-radius: 10px;
 }
 
 .modal-content {
   max-width: 50%;
   max-height: 85%;
   object-fit: contain;
+  display:block;
   animation: zoomIn 0.4s ease-in-out;
 }
 
@@ -985,6 +1006,12 @@ aside .widget {
   color: #fff;
   font-size: 35px;
   cursor: pointer;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;  
 }
 
 @keyframes zoomIn {
@@ -1019,12 +1046,29 @@ aside .widget {
   transform: rotateY(180deg);
 }
 
+.card-front,
+.card-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical centering */
+  align-items: center;       /* horizontal centering */
+  text-align: center;
+}
+
 .card-front, .card-back {
   backface-visibility: hidden;
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   border-radius: 10px;
   box-shadow: 0 8px 12px #1a3f73;
+}
+
+.card-front {
+  display: flex;              /* 🔥 */
+  flex-direction: column;     /* 🔥 */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 .card-back {
@@ -1049,14 +1093,6 @@ aside .widget {
   align-items: center;
 }
 
-.modal-content {
-  max-width: 90%;
-  max-height: 85%;
-  object-fit: contain;
-}
-
-
-
 
 .close-btn {
   position: absolute;
@@ -1067,10 +1103,137 @@ aside .widget {
   cursor: pointer;
 }
 
+#contact-section h3 {
+  text-align: center;
+}
+
+#form h3{
+  text-align:center;
+  font-size:1.5rem;
+  color:#b59c5a;
+}
+
+#contact-info {
+
+  text-align:center;
+}
+
+contact-info h3 {
+display:block;
+
+}
+
+#contact-section {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  text-align:center;
+  
+}
+
+#contact-section .post {
+ max-width: 400px;
+  margin: 20px auto;
+
+}
+
+ #form {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  color:#b59c5a;
+}
+
+#form form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contact-section h2 {
+  text-align: center;
+  color:#590743;
+text-shadow: 1px 1px 	#b59c5a;
+padding:5px 7.5px 0 5px;
+font-size:2rem;
+font-family: "Kings", cursive;
+}
+
+#contact-section .post-grid {
+  display: block; /* kill the flex row behavior */
+}
+
+input[type=text]
+{width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #b59c5a; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical } 
+
+
+select{
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #b59c5a; 
+  border-radius: 4px; 
+  box-sizing: border-box;
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical; 
+}
+
+textarea {
+  width:100%; 
+  padding: 12px;  
+  border: 5px solid #b59c5a; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical; 
+}
+
+
+input[type=submit] {
+  background-color: #b59c5a;
+  color: #04273a;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+  background-color: #371a4f;
+}
+
+#form {
+  max-width: 600px;   
+  width: 100%;
+  margin: 0 auto;    
+  border-radius: 5px;
+  background-color: #04273a;
+  padding: 20px;
+}
+
+#contact-section .post, #form {
+  width: 100%;
+}
+
+.container,
+main,
+#content-home,
+#contact-section {
+  background: transparent;
+}
+
 /* Footer Styling */
 
   #colophon{
-background-image:url(../img/tudor-rose.png);
+background-image:url("../img/tudor-rose.png");
 background-size: cover;
 background-repeat:no-repeat;
 padding-left:10px;
