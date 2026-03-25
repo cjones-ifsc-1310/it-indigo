@@ -20,18 +20,15 @@
         <label for="radius" class="error" id="radiuserror"></label>
         <br>
         
-        <label class="formlabel">Diameter:</label><span id="diameter"></span><br>
-        <label class="formlabel">Circumference:</label><span id="circumference"></span><br>
-        <label class="formlabel">Area:</label><span id="area"></span><br>
+        <label class="formlabel">Diameter: </label><span id="diameter"></span><br>
+        <label class="formlabel">Circumference: </label><span id="circumference"></span><br>
+        <label class="formlabel">Area: </label><span id="area"></span><br>
         <br><br>
-        <input type="submit" value="Calculate" id="btnSubmitCalculate">
-        <input type="submit" value="Clear" id="btnSubmitClear">
+        <input type="button" value="Calculate" id="btnSubmitCalculate" onclick="calculate()">
+<input type="button" value="Clear" id="btnSubmitClear" onclick="clearForm()">
     </form>
-<script>
-$( "#CircleForm" ).validate({
+    <script src="assets/js/script.js"></script>
 
-});
-</script>
 </body>
 </html>
 

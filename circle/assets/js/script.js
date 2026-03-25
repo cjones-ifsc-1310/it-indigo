@@ -54,19 +54,12 @@
             }
         }
 
-          function calcHypotenuse (leg1value, leg2value)
-          // returns hypotenuse of a right triangle
-          // square root of leg1 squared plus leg2 squared
-          {
-              return Math.sqrt((leg1value*leg1value) + (leg2value*leg2value));
-          }
           
-          function clearForm()
-        {
-            document.getElementById("leg1").value = "";
-            document.getElementById("leg1error").innerHTML = "";
-            document.getElementById("leg2").value = "";
-            document.getElementById("leg2error").innerHTML = "";
-            document.getElementById("hypotenuse").innerHTML = "";
-        }
+          function clearForm() {
+    document.getElementById("radius").value = "";
+    document.getElementById("radiuserror").innerHTML = "";
+    document.getElementById("diameter").innerHTML = "";
+    document.getElementById("circumference").innerHTML = "";
+    document.getElementById("area").innerHTML = "";
+}
  
