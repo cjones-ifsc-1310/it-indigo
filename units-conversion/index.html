@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+<title> It Indigo | Chrissy Jones</title>
+<meta charset="utf-8"/>
+<meta name="author" content="Christine Jones"/>
+    <title>Unit Converter (AJAX)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+</head>
+<body>
+    <main>
+<form id="myform" onsubmit="return false">
+    <div class="formcontainer">
+        <h1>Unit Converter (AJAX)</h1>
+        <fieldset id="detail">
+            <legend>Unit Converter (AJAX)</legend>  
+            <br>
+            
+            <label class="formlabel" for="FromValue">From Value: </label>
+            <input type="text" id="FromValue" name="FromValue" size="15" maxlength="15"       
+                   data-rule-required="true"  data-msg-required="From Value is Required" 
+                   data-rule-number="true" data-msg-number="From Value must be a Number">
+            <label class="error" for="FromValue" id="FromValueError"></label>
+            <br><br>
+      
+<label class="formlabel">From Unit: </label>
+
+<label>
+  <input type="radio" name="FromUnit" value="cm">centimeters 
+</label>
+
+<label>
+  <input type="radio" name="FromUnit" value="m">meters
+</label>
+
+<label>
+  <input type="radio" name="FromUnit" value="km">kilometers
+</label>
+
+<label>
+  <input type="radio" name="FromUnit" value="in">inches
+</label>
+
+<label>
+  <input type="radio" name="FromUnit" value="ft">feet
+</label>
+
+<label>
+  <input type="radio" name="FromUnit" value="yd">yards
+</label>
+
+<label>
+  <input type="radio" name="FromUnit" value="mi">miles
+</label>
+
+<label for="FromUnit" class="error" id="FromUnitError"></label>
+            <br><br>
+
+<label class="formlabel">To Unit: </label>
+
+<label>
+  <input type="radio" name="ToUnit" value="cm">centimeters 
+</label>
+
+<label>
+  <input type="radio" name="ToUnit" value="m">meters
+</label>
+
+<label>
+  <input type="radio" name="ToUnit" value="km">kilometers
+</label>
+
+<label>
+  <input type="radio" name="ToUnit" value="in">inches
+</label>
+
+<label>
+  <input type="radio" name="ToUnit" value="ft">feet
+</label>
+
+<label>
+  <input type="radio" name="ToUnit" value="yd">yards
+</label>
+
+<label>
+  <input type="radio" name="ToUnit" value="mi">miles
+</label>
+
+<label for="ToUnit" class="error" id="ToUnitError"></label>
+            <br><br>
+
+            <label class="formlabel">To Value: </label>
+            <span id="ToValue"></span>
+            <br><br>
+
+            <input type="button" value="Calculate" name="Calculate" onclick="calculate();">
+            <input type="button" value="Clear" name="Clear" onclick="clearform();" novalidate>
+
+        </fieldset>
+    </div>
+</form>
+<script src="assets/js/script.js"></script>
+</main>
+<footer>
+  <div id="copyright">
+    &copy; 2026 Chrissy Jones <3 </div>
+</footer>
+ 
+</body>
+</html>
