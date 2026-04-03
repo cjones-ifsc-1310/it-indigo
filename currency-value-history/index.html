@@ -1,0 +1,300 @@
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="author" content="Christine Jones"/>
+    <title>Currency Value History | Christine Jones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+</head>
+<body>
+    <main>
+<form id="myform" onsubmit="return false">
+    <div class="formcontainer">
+        <h1>Currency Value History</h1>
+        <fieldset id="detail">
+            <legend>Currency Value History</legend>  
+            <br>
+            
+            <label for="base">Base Currency: </label>
+            <select id="base" name="base">
+            <option value="">--Select Currency--</option>
+    <option value="ARS">ARS (Argentine Peso)</option>
+    <option value="AUD">AUD (Australian Dollar)</option>
+    <option value="BRL">BRL (Brazilian Real)</option>
+    <option value="CAD">CAD (Canadian Dollar)</option>
+    <option value="CHF">CHF (Swiss Franc)</option>
+    <option value="CLP">CLP (Chilean Peso)</option>
+    <option value="CNY">CNY (China Yuan Renminbi)</option>
+    <option value="COP">COP (Colombian Peso)</option>
+    <option value="CZK">CZK (Czech Koruna)</option>
+    <option value="DKK">DKK (Danish Krone)</option>
+    <option value="EUR">EUR (Euro)</option>
+    <option value="GBP">GBP (Pound Sterling)</option>
+    <option value="HKD">HKD (Hong Kong Dollar)</option>
+    <option value="HUF">HUF (Hungarian Forint)</option>
+    <option value="IDR">IDR (Indonesian Rupiah)</option>
+    <option value="ILS">ILS (New Israeli Sheqel)</option>
+    <option value="INR">INR (Indian Rupee)</option>
+    <option value="ISK">ISK (Iceland Krona)</option>
+    <option value="JPY">JPY (Japanese Yen)</option>
+    <option value="KES">KES (Kenyan Shilling)</option>
+    <option value="KRW">KRW (South Korean Won)</option>
+    <option value="MXN">MXN (Mexican Peso)</option>
+    <option value="MYR">MYR (Malaysian Ringgit)</option>
+    <option value="NOK">NOK (Norwegian Krone)</option>
+    <option value="NZD">NZD (New Zealand Dollar)</option>
+    <option value="PHP">PHP (Philippine Peso)</option>
+    <option value="PLN">PLN (New Polish Zloty)</option>
+    <option value="SEK">SEK (Swedish Krona)</option>
+    <option value="SGD">SGD (Singapore Dollar)</option>
+    <option value="THB">THB (Thai Baht)</option>
+    <option value="TWD">TWD (New Taiwan Dollar)</option>
+    <option value="USD">USD (US Dollar)</option>
+    <option value="VND">VND (Vietnamese New Dong)</option>
+    <option value="ZAR">ZAR (South African Rand)</option>
+    </select>
+            <label class="error" for="BaseCurrency" id="BaseCurrencyError"></label>
+            <br><br>
+      <div class="currency-row">
+<label for="convert1">Convert to Currency 1: </label>
+            <select id="convert1" name="convert1">
+            <option value="">--Select Currency--</option>
+    <option value="ARS">ARS (Argentine Peso)</option>
+    <option value="AUD">AUD (Australian Dollar)</option>
+    <option value="BRL">BRL (Brazilian Real)</option>
+    <option value="CAD">CAD (Canadian Dollar)</option>
+    <option value="CHF">CHF (Swiss Franc)</option>
+    <option value="CLP">CLP (Chilean Peso)</option>
+    <option value="CNY">CNY (China Yuan Renminbi)</option>
+    <option value="COP">COP (Colombian Peso)</option>
+    <option value="CZK">CZK (Czech Koruna)</option>
+    <option value="DKK">DKK (Danish Krone)</option>
+    <option value="EUR">EUR (Euro)</option>
+    <option value="GBP">GBP (Pound Sterling)</option>
+    <option value="HKD">HKD (Hong Kong Dollar)</option>
+    <option value="HUF">HUF (Hungarian Forint)</option>
+    <option value="IDR">IDR (Indonesian Rupiah)</option>
+    <option value="ILS">ILS (New Israeli Sheqel)</option>
+    <option value="INR">INR (Indian Rupee)</option>
+    <option value="ISK">ISK (Iceland Krona)</option>
+    <option value="JPY">JPY (Japanese Yen)</option>
+    <option value="KES">KES (Kenyan Shilling)</option>
+    <option value="KRW">KRW (South Korean Won)</option>
+    <option value="MXN">MXN (Mexican Peso)</option>
+    <option value="MYR">MYR (Malaysian Ringgit)</option>
+    <option value="NOK">NOK (Norwegian Krone)</option>
+    <option value="NZD">NZD (New Zealand Dollar)</option>
+    <option value="PHP">PHP (Philippine Peso)</option>
+    <option value="PLN">PLN (New Polish Zloty)</option>
+    <option value="SEK">SEK (Swedish Krona)</option>
+    <option value="SGD">SGD (Singapore Dollar)</option>
+    <option value="THB">THB (Thai Baht)</option>
+    <option value="TWD">TWD (New Taiwan Dollar)</option>
+    <option value="USD">USD (US Dollar)</option>
+    <option value="VND">VND (Vietnamese New Dong)</option>
+    <option value="ZAR">ZAR (South African Rand)</option>
+    </select>
+            <label class="error" for="convert1" id="ConvertCurrencyError1"></label>
+            <span id="result1" class="result"></span></div>
+            <br><br>
+      
+<div class="currency-row">
+            <label for="convert2">Convert to Currency 2: </label>
+            <select id="convert2" name="convert2">
+            <option value="">--Select Currency--</option>
+    <option value="ARS">ARS (Argentine Peso)</option>
+    <option value="AUD">AUD (Australian Dollar)</option>
+    <option value="BRL">BRL (Brazilian Real)</option>
+    <option value="CAD">CAD (Canadian Dollar)</option>
+    <option value="CHF">CHF (Swiss Franc)</option>
+    <option value="CLP">CLP (Chilean Peso)</option>
+    <option value="CNY">CNY (China Yuan Renminbi)</option>
+    <option value="COP">COP (Colombian Peso)</option>
+    <option value="CZK">CZK (Czech Koruna)</option>
+    <option value="DKK">DKK (Danish Krone)</option>
+    <option value="EUR">EUR (Euro)</option>
+    <option value="GBP">GBP (Pound Sterling)</option>
+    <option value="HKD">HKD (Hong Kong Dollar)</option>
+    <option value="HUF">HUF (Hungarian Forint)</option>
+    <option value="IDR">IDR (Indonesian Rupiah)</option>
+    <option value="ILS">ILS (New Israeli Sheqel)</option>
+    <option value="INR">INR (Indian Rupee)</option>
+    <option value="ISK">ISK (Iceland Krona)</option>
+    <option value="JPY">JPY (Japanese Yen)</option>
+    <option value="KES">KES (Kenyan Shilling)</option>
+    <option value="KRW">KRW (South Korean Won)</option>
+    <option value="MXN">MXN (Mexican Peso)</option>
+    <option value="MYR">MYR (Malaysian Ringgit)</option>
+    <option value="NOK">NOK (Norwegian Krone)</option>
+    <option value="NZD">NZD (New Zealand Dollar)</option>
+    <option value="PHP">PHP (Philippine Peso)</option>
+    <option value="PLN">PLN (New Polish Zloty)</option>
+    <option value="SEK">SEK (Swedish Krona)</option>
+    <option value="SGD">SGD (Singapore Dollar)</option>
+    <option value="THB">THB (Thai Baht)</option>
+    <option value="TWD">TWD (New Taiwan Dollar)</option>
+    <option value="USD">USD (US Dollar)</option>
+    <option value="VND">VND (Vietnamese New Dong)</option>
+    <option value="ZAR">ZAR (South African Rand)</option>
+    </select>
+            <label class="error" for="convert2" id="ConvertCurrencyError2"></label>
+            <span id="result2" class="result"></span></div>
+            <br><br>
+<div class="currency-row">
+
+            <label for="convert3">Convert to Currency 3: </label>
+            <select id="convert3" name="convert3">
+            <option value="">--Select Currency--</option>
+    <option value="ARS">ARS (Argentine Peso)</option>
+    <option value="AUD">AUD (Australian Dollar)</option>
+    <option value="BRL">BRL (Brazilian Real)</option>
+    <option value="CAD">CAD (Canadian Dollar)</option>
+    <option value="CHF">CHF (Swiss Franc)</option>
+    <option value="CLP">CLP (Chilean Peso)</option>
+    <option value="CNY">CNY (China Yuan Renminbi)</option>
+    <option value="COP">COP (Colombian Peso)</option>
+    <option value="CZK">CZK (Czech Koruna)</option>
+    <option value="DKK">DKK (Danish Krone)</option>
+    <option value="EUR">EUR (Euro)</option>
+    <option value="GBP">GBP (Pound Sterling)</option>
+    <option value="HKD">HKD (Hong Kong Dollar)</option>
+    <option value="HUF">HUF (Hungarian Forint)</option>
+    <option value="IDR">IDR (Indonesian Rupiah)</option>
+    <option value="ILS">ILS (New Israeli Sheqel)</option>
+    <option value="INR">INR (Indian Rupee)</option>
+    <option value="ISK">ISK (Iceland Krona)</option>
+    <option value="JPY">JPY (Japanese Yen)</option>
+    <option value="KES">KES (Kenyan Shilling)</option>
+    <option value="KRW">KRW (South Korean Won)</option>
+    <option value="MXN">MXN (Mexican Peso)</option>
+    <option value="MYR">MYR (Malaysian Ringgit)</option>
+    <option value="NOK">NOK (Norwegian Krone)</option>
+    <option value="NZD">NZD (New Zealand Dollar)</option>
+    <option value="PHP">PHP (Philippine Peso)</option>
+    <option value="PLN">PLN (New Polish Zloty)</option>
+    <option value="SEK">SEK (Swedish Krona)</option>
+    <option value="SGD">SGD (Singapore Dollar)</option>
+    <option value="THB">THB (Thai Baht)</option>
+    <option value="TWD">TWD (New Taiwan Dollar)</option>
+    <option value="USD">USD (US Dollar)</option>
+    <option value="VND">VND (Vietnamese New Dong)</option>
+    <option value="ZAR">ZAR (South African Rand)</option>
+    </select>
+            <label class="error" for="convert3" id="ConvertCurrencyError3"></label>
+            <span id="result3" class="result"></span></div>
+            <br><br>
+<div class="currency-row">
+
+            <label for="convert4">Convert to Currency 4: </label>
+            <select id="convert4" name="convert4">
+            <option value="">--Select Currency--</option>
+    <option value="ARS">ARS (Argentine Peso)</option>
+    <option value="AUD">AUD (Australian Dollar)</option>
+    <option value="BRL">BRL (Brazilian Real)</option>
+    <option value="CAD">CAD (Canadian Dollar)</option>
+    <option value="CHF">CHF (Swiss Franc)</option>
+    <option value="CLP">CLP (Chilean Peso)</option>
+    <option value="CNY">CNY (China Yuan Renminbi)</option>
+    <option value="COP">COP (Colombian Peso)</option>
+    <option value="CZK">CZK (Czech Koruna)</option>
+    <option value="DKK">DKK (Danish Krone)</option>
+    <option value="EUR">EUR (Euro)</option>
+    <option value="GBP">GBP (Pound Sterling)</option>
+    <option value="HKD">HKD (Hong Kong Dollar)</option>
+    <option value="HUF">HUF (Hungarian Forint)</option>
+    <option value="IDR">IDR (Indonesian Rupiah)</option>
+    <option value="ILS">ILS (New Israeli Sheqel)</option>
+    <option value="INR">INR (Indian Rupee)</option>
+    <option value="ISK">ISK (Iceland Krona)</option>
+    <option value="JPY">JPY (Japanese Yen)</option>
+    <option value="KES">KES (Kenyan Shilling)</option>
+    <option value="KRW">KRW (South Korean Won)</option>
+    <option value="MXN">MXN (Mexican Peso)</option>
+    <option value="MYR">MYR (Malaysian Ringgit)</option>
+    <option value="NOK">NOK (Norwegian Krone)</option>
+    <option value="NZD">NZD (New Zealand Dollar)</option>
+    <option value="PHP">PHP (Philippine Peso)</option>
+    <option value="PLN">PLN (New Polish Zloty)</option>
+    <option value="SEK">SEK (Swedish Krona)</option>
+    <option value="SGD">SGD (Singapore Dollar)</option>
+    <option value="THB">THB (Thai Baht)</option>
+    <option value="TWD">TWD (New Taiwan Dollar)</option>
+    <option value="USD">USD (US Dollar)</option>
+    <option value="VND">VND (Vietnamese New Dong)</option>
+    <option value="ZAR">ZAR (South African Rand)</option>
+    </select>
+            <label class="error" for="convert4" id="ConvertCurrencyError4"></label>
+            <span id="result4" class="result"></span></div>   
+            <br><br>
+<div class="currency-row">
+            <label for="convert5">Convert to Currency 5: </label>
+            <select id="convert5" name="convert5">
+            <option value="">--Select Currency--</option>
+    <option value="ARS">ARS (Argentine Peso)</option>
+    <option value="AUD">AUD (Australian Dollar)</option>
+    <option value="BRL">BRL (Brazilian Real)</option>
+    <option value="CAD">CAD (Canadian Dollar)</option>
+    <option value="CHF">CHF (Swiss Franc)</option>
+    <option value="CLP">CLP (Chilean Peso)</option>
+    <option value="CNY">CNY (China Yuan Renminbi)</option>
+    <option value="COP">COP (Colombian Peso)</option>
+    <option value="CZK">CZK (Czech Koruna)</option>
+    <option value="DKK">DKK (Danish Krone)</option>
+    <option value="EUR">EUR (Euro)</option>
+    <option value="GBP">GBP (Pound Sterling)</option>
+    <option value="HKD">HKD (Hong Kong Dollar)</option>
+    <option value="HUF">HUF (Hungarian Forint)</option>
+    <option value="IDR">IDR (Indonesian Rupiah)</option>
+    <option value="ILS">ILS (New Israeli Sheqel)</option>
+    <option value="INR">INR (Indian Rupee)</option>
+    <option value="ISK">ISK (Iceland Krona)</option>
+    <option value="JPY">JPY (Japanese Yen)</option>
+    <option value="KES">KES (Kenyan Shilling)</option>
+    <option value="KRW">KRW (South Korean Won)</option>
+    <option value="MXN">MXN (Mexican Peso)</option>
+    <option value="MYR">MYR (Malaysian Ringgit)</option>
+    <option value="NOK">NOK (Norwegian Krone)</option>
+    <option value="NZD">NZD (New Zealand Dollar)</option>
+    <option value="PHP">PHP (Philippine Peso)</option>
+    <option value="PLN">PLN (New Polish Zloty)</option>
+    <option value="SEK">SEK (Swedish Krona)</option>
+    <option value="SGD">SGD (Singapore Dollar)</option>
+    <option value="THB">THB (Thai Baht)</option>
+    <option value="TWD">TWD (New Taiwan Dollar)</option>
+    <option value="USD">USD (US Dollar)</option>
+    <option value="VND">VND (Vietnamese New Dong)</option>
+    <option value="ZAR">ZAR (South African Rand)</option>
+    </select>
+            <label class="error" for="convert5" id="ConvertCurrencyError5"></label>
+            <span id="result5" class="result"></span></div>
+            <br><br>
+
+            
+  <label for="start-date">Start Date:</label>
+  <input type="date" id="start-date" name="start_date" required>
+
+  <label for="end-date">End Date:</label>
+  <input type="date" id="end-date" name="end_date" required>
+
+            <br><br>
+
+            <input type="button" value="Show Results" name="Show Results" onclick="ShowResults();">
+            <input type="button" value="Clear" name="Clear" onclick="clearform();" novalidate>
+
+        </fieldset>
+    </div>
+</form>
+<script src="assets/js/chart.js"></script>
+</main>
+<footer>
+  <div id="copyright">
+    &copy; 2026 Chrissy Jones <3 </div>
+</footer>
+ 
+</body>
+</html>
