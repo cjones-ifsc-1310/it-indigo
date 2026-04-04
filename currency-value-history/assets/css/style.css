@@ -1,54 +1,119 @@
-h1 {
-font-family: "Alkatra", system-ui;
-color: goldenrod;
-border-bottom: 5px solid goldenrod;
-
-}
-
-
-
-.formcontainer {
-    width: 1000px;
-    padding: 5px;
-    
-
-}
-
-.formlabel {
+body {
     font-family: "Alkatra", system-ui;
-    display: inline-block;
-    width: 100px;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    max-width: 800px;       /* max width as requested */
+    margin: 40px auto;       /* centers container horizontally */
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.formcontainer h1 {
+    text-align: center;
+    color: goldenrod;
+    border-bottom: 5px solid goldenrod;
+    padding-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.form-row label {
+    width: 180px;
     text-align: right;
-    padding: 5px;
+    margin-right: 10px;
 }
+
+.form-row select,
+.form-row input[type="date"],
+.form-row input[type="text"] {
+    width: 220px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: flex-start;  /* move buttons to the left */
+    gap: 10px;
+    margin-top: 15px;
+}
+
 .error {
-    font-family: "Alkatra", system-ui;
     color: red;
     padding-left: 5px;
 }
 
-.currency-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+#currencyChart {
+    display: block;
+    margin: 40px auto 0 auto;
+    max-width: 800px;
+    height: 400px;
 }
 
-.result {
-    min-width: 150px;
-    font-weight: bold;
+.input-container {
+    display: flex;
+    flex-direction: column;   /* stack select + error vertically */
+    align-items: flex-end;    /* keep select right-aligned */
 }
+
+.input-container select {
+    width: 220px;             /* keeps dropdown same width as before */
+}
+
+fieldset {
+    border: none;      /* removes the fieldset border */
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    display: none;     /* hides the legend text */
+}
+
+/* Breaker line styling */
+.breaker-line {
+    border: none;            /* remove default border */
+    height: 2px;
+    background-color: goldenrod;  /* or whatever color you like */
+    margin: 30px 0;          /* spacing above and below */
+}
+
+/* Shadow box for the graph */
+.graph-container {
+    max-width: 750px;          /* max width of the shadow box */
+    width: 100%;                /* allows responsiveness */
+    margin: 0 auto 40px auto;   /* centers box and adds spacing below */
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.graph-container canvas {
+    width: 100% !important;     /* always fills container width */
+    max-width: 100%;            /* ensures it doesn't overflow */
+    height: 400px !important;   /* fixed height, optional */
+    display: block;
+    margin: 0 auto;
+}
+
 
 footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
 }
 
-
 #copyright {
-  color: #000000;
-  font-size: 1.8rem;
-  margin: 0;       
+    font-size: 1.8rem;
 }
