@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Katherine "Kitty" Howard</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Henry VIII's wives, their lives, and their fates.">
+  <meta name="author" content="Christine Jones">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kings&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  
+</head>
+<body>
+  <main>
+    <header role="banner" class="primary container">
+      <div class="hgroup">
+        <h1><a href="home.html">The Six Wives of Henry VIII</a></h1>
+        
+      </div>
+      <nav role="navigation">
+  <ul>
+    <li><a href="home.html" data-hover="Henry VIII">Home</a></li>
+    <li><a href="aragon.html" data-hover="Divorced">Catherine of Aragon</a></li>
+    <li><a href="boleyn.html" data-hover="Beheaded">Anne Boleyn</a></li>
+    <li><a href="seymour.html" data-hover="Died">Jane Seymour</a></li>
+    <li><a href="cleves.html" data-hover="Divorced">Anne of Cleves</a></li>
+    <li><a href="howard.html" data-hover="Beheaded">Katherine Howard</a></li>
+    <li><a href="parr.html" data-hover="Survived">Catherine Parr</a></li>
+    <li><a href="weather.html" data-hover="Forecast">Weather</a></li>
+  </ul>
+</nav>
+    </header>
+   
+  <section id="content3" class="container">
+    <article class="post">
+      <header>
+        <h2>Visiting the Tower of London soon? <br> Here's a 7-day weather forecast!</h2></header>
+        <p>Traveling to other locations? <br>Scroll below the table to get a forecast for your desired location.</p>
+           
+    
+<div id="loadingSpinner" class="spinner" style="display:none;"></div>
+  
+    <div id="locationInfo"></div>
+    <div class="data-card">
+<div class="graph-container"> 
+      <canvas id="weatherChart"></canvas>
+</div>
+    <div class="table-container">
+    <table id="weatherTable"></table>
+    </div></div>
+<div id="weatherContent" class="fade-in">
+    <div id="weather-form">
+      <h3>Insert your next location to get the forecast there, too!</h3>
+      <input type="text" id="locationInput" placeholder="Enter a location (ex: London)">
+      <button onclick="getWeather()">Show 7-day Forecast</button>
+      <button onclick="clearWeather()">Clear</button>
+      <p id="weatherError"></p>
+    </div></div>
+      
+      <footer class="post-meta">Posted By Chrissy Jones <3 </footer>
+    </article>
+
+  </section>
+
+ 
+<section id="contact-info">
+<h3><a href="contact.html">Contact Website Author Christine Jones Here</a></h3>
+
+</section>
+     <footer id="colophon" role="contentinfo">
+  <nav role="navigation" class="footer">
+    <div class="footer-buttons">
+  <a href="home.html" class="btn-footer">Home</a>
+  <a href="aragon.html" class="btn-footer">Catherine of Aragon</a>
+  <a href="boleyn.html" class="btn-footer">Anne Boleyn</a>
+  <a href="seymour.html" class="btn-footer">Jane Seymour</a>
+  <a href="cleves.html" class="btn-footer">Anne of Cleves</a>
+  <a href="howard.html" class="btn-footer">Katherine Howard</a>
+  <a href="parr.html" class="btn-footer">Catherine Parr</a>
+  <a href="weather.html" class="btn-footer">Weather</a>
+</div>
+    </nav>
+    <h6>&copy;2026 Chrissy Jones</h6>
+  </main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+let weatherChartInstance = null;
+
+// =========================
+// GET WEATHER
+// =========================
+async function getWeather() {
+  const spinner = document.getElementById("loadingSpinner");
+  spinner.style.display = "block";
+
+  let input = document.getElementById("locationInput").value;
+  const location = input.trim() === "" ? "Tower of London" : input;
+
+  const errorEl = document.getElementById("weatherError");
+  errorEl.textContent = "";
+
+  try {
+    // GEO API
+    let geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${location}`;
+    let geoResponse = await fetch(geoUrl);
+    let geoData = await geoResponse.json();
+
+    if (!geoData.results || geoData.results.length === 0) {
+      errorEl.textContent = "No location found.";
+      return;
+    }
+
+    let place = geoData.results[0];
+
+    // LOCATION INFO
+    document.getElementById("locationInfo").innerHTML = `
+      <h4>${place.name}</h4>
+      <p>${place.admin1}, ${place.country}</p>
+      <p>Latitude: ${place.latitude} | Longitude: ${place.longitude}</p>
+    `;
+
+    // WEATHER API
+    let weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${place.latitude}&longitude=${place.longitude}&hourly=temperature_2m&temperature_unit=fahrenheit`;
+
+    let weatherResponse = await fetch(weatherUrl);
+    let weatherData = await weatherResponse.json();
+
+    if (!weatherData.hourly || !weatherData.hourly.time) {
+      throw new Error("Weather data not available.");
+    }
+
+    let times = weatherData.hourly.time;
+    let temps = weatherData.hourly.temperature_2m;
+
+    let tableHTML = "<tr><th>Date/Time</th><th>Temp (°F)</th></tr>";
+
+    let labels = [];
+    let dataPoints = [];
+
+    // 12-hour intervals (7 days)
+    for (let i = 0; i < 168; i += 12) {
+      let date = new Date(times[i]).toLocaleString();
+
+      tableHTML += `<tr><td>${date}</td><td>${temps[i]}</td></tr>`;
+
+      labels.push(date);
+      dataPoints.push(temps[i]);
+    }
+
+    document.getElementById("weatherTable").innerHTML = tableHTML;
+
+    const ctx = document.getElementById("weatherChart").getContext("2d");
+
+    // Destroy previous chart
+    if (weatherChartInstance) {
+      weatherChartInstance.destroy();
+    }
+
+    // CREATE CHART
+    weatherChartInstance = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: labels,
+        datasets: [{
+          label: "Temperature (°F)",
+          data: dataPoints,
+          borderColor: "#1a3f73",
+          backgroundColor: "rgba(26,63,115,0.2)",
+          pointBackgroundColor: "#590743",
+          pointBorderColor: "#b59c5a",
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            labels: { color: "#590743" }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: "#590743" },
+            grid: { color: "rgba(89,7,67,0.1)" }
+          },
+          y: {
+            ticks: { color: "#590743" },
+            grid: { color: "rgba(89,7,67,0.1)" }
+          }
+        }
+      }
+    });
+
+  } catch (error) {
+    console.error("FULL ERROR:", error);
+    errorEl.textContent = "Something went wrong. Please try again.";
+  } finally {
+    spinner.style.display = "none";
+  }
+}
+
+// =========================
+// CLEAR + RESET TO DEFAULT
+// =========================
+function clearWeather() {
+  const content = document.getElementById("weatherContent");
+
+  // Start fade out
+  content.classList.remove("fade-in");
+  content.classList.add("fade-out");
+
+  setTimeout(() => {
+    // Clear UI
+    document.getElementById("locationInput").value = "";
+    document.getElementById("weatherError").textContent = "";
+    document.getElementById("locationInfo").innerHTML = "";
+    document.getElementById("weatherTable").innerHTML = "";
+
+    // Destroy chart
+    if (weatherChartInstance) {
+      weatherChartInstance.destroy();
+      weatherChartInstance = null;
+    }
+
+    // Reload default
+    getWeather();
+
+    // Fade back in
+    content.classList.remove("fade-out");
+    content.classList.add("fade-in");
+
+  }, 400); // match CSS transition time
+}
+// =========================
+// AUTO LOAD DEFAULT
+// =========================
+window.onload = function () {
+  getWeather();
+};
+</script>
+  </div>
+</div>
+</body>
+
+</html>
