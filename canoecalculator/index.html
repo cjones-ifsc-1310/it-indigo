@@ -3,49 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Canoe Rental Calculator</title>
-<link href="css/style.css" rel="stylesheet">
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-
-  .calculator {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
-
-  select, output {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 16px;
-  }
-
-  output {
-    display: block;
-    background: #f4f4f4;
-  }
-</style>
-
+<link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="calculator">
-  <h2>One Day Canoe Rental Cost Calculator</h2>
+<div class="float-calculator">
 
-  <label for="quantity">Number of Canoes:</label>
-  <select id="quantity" aria-describedby="priceHelp">
+  <h2>One Day Canoe Rental Cost</h2>
+
+  <label for="quantity" class="section-label">Number of Canoes</label>
+  <select id="quantity">
+    <option value="">Select</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -58,35 +27,18 @@
     <option value="10">10</option>
   </select>
 
-  <p id="priceHelp">Each canoe is $67 plus 9.5% sales tax.</p>
+  <div class="rate-note">
+    $67 per canoe + 9.5% sales tax
+  </div>
 
-  <label for="total">Total Cost (including tax):</label>
-  <output id="total" aria-live="polite">$0.00</output>
+  <div class="result-box active" id="result">
+    <h3>Total Cost</h3>
+    <p class="price" id="total">$0.00</p>
+  </div>
+
 </div>
 
-
-
-<script>
-  const pricePerCanoe = 67;
-  const taxRate = 0.095;
-
-  const quantitySelect = document.getElementById("quantity");
-  const totalOutput = document.getElementById("total");
-
-  function calculateTotal() {
-    const quantity = parseInt(quantitySelect.value);
-    const subtotal = quantity * pricePerCanoe;
-    const total = subtotal + (subtotal * taxRate);
-
-    totalOutput.textContent = `$${total.toFixed(2)}`;
-  }
-
-  // Run on page load
-  calculateTotal();
-
-  // Update when selection changes
-  quantitySelect.addEventListener("change", calculateTotal);
-</script>
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>
