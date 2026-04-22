@@ -14,9 +14,10 @@ const result = document.getElementById("result");
 endSelect.addEventListener("change", () => {
   const selected = endSelect.value;
 
-  renderRiver(selected); // 👈 add this
+  renderRiver(selected);
 
   if (!selected) {
+    result.style.display = "none";
     result.innerHTML = "";
     return;
   }
@@ -27,9 +28,10 @@ endSelect.addEventListener("change", () => {
   const maxMiles = Math.max(...Object.values(floatData).map(t => t.miles));
   const percent = (trip.miles / maxMiles) * 100;
 
+  result.style.display = "block";
+
   result.innerHTML = `
     <h3>Ponca → ${selected}</h3>
-
     <p><strong>Float Miles:</strong> ${trip.miles} miles</p>
 
     <div class="route-bar">
@@ -37,7 +39,6 @@ endSelect.addEventListener("change", () => {
     </div>
 
     <p>Approx. Float Time: ${hours} hours</p>
-
     <p><strong>Cost:</strong> <span class="price">$${trip.price.toFixed(2)}</span></p>
   `;
 });
@@ -49,29 +50,33 @@ function renderRiver(selected) {
 
   const maxMiles = Math.max(...Object.values(floatData).map(t => t.miles));
 
+  // ✅ TICKS (keep these)
+  for (let i = 5; i <= maxMiles; i += 5) {
+    const percent = (i / maxMiles) * 100;
 
-  const points = [
-    { name: "Ponca", miles: 0 },
-    ...Object.entries(floatData).map(([name, data]) => ({
-      name,
-      miles: data.miles
-    }))
-  ];
+    const tick = document.createElement("div");
+    tick.className = "river-tick";
+    tick.style.left = `${percent}%`;
 
-points.forEach(p => {
-  if (p.name === "Ponca") return; // 👈 hide from timeline
+    tick.innerHTML = `<span>${i}</span>`;
+    riverEl.appendChild(tick);
+  }
 
-  const percent = (p.miles / maxMiles) * 100;
+  // ❗ STOP if nothing selected
+  if (!selected) return;
 
+  const trip = floatData[selected];
+  const percent = (trip.miles / maxMiles) * 100;
+
+  // ✅ ONLY ONE DOT
   const dot = document.createElement("div");
-  dot.className = "river-dot" + (p.name === selected ? " active" : "");
+  dot.className = "river-dot active";
   dot.style.left = `${percent}%`;
 
   dot.innerHTML = `
     <div class="circle"></div>
-    <small>${p.name}</small>
+    <small>${selected}</small>
   `;
 
   riverEl.appendChild(dot);
-});
 }
