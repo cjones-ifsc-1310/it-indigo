@@ -10,15 +10,17 @@ const floatData = {
 
 const endSelect = document.getElementById("end");
 const result = document.getElementById("result");
+const riverEl = document.getElementById("river");
 
 endSelect.addEventListener("change", () => {
   const selected = endSelect.value;
 
   renderRiver(selected);
 
+  // reset state
   if (!selected) {
-    result.style.display = "none";
     result.innerHTML = "";
+    result.classList.remove("active");
     return;
   }
 
@@ -27,8 +29,6 @@ endSelect.addEventListener("change", () => {
 
   const maxMiles = Math.max(...Object.values(floatData).map(t => t.miles));
   const percent = (trip.miles / maxMiles) * 100;
-
-  result.style.display = "block";
 
   result.innerHTML = `
     <h3>Ponca → ${selected}</h3>
@@ -41,16 +41,16 @@ endSelect.addEventListener("change", () => {
     <p>Approx. Float Time: ${hours} hours</p>
     <p><strong>Cost:</strong> <span class="price">$${trip.price.toFixed(2)}</span></p>
   `;
-});
 
-const riverEl = document.getElementById("river");
+  result.classList.add("active");
+});
 
 function renderRiver(selected) {
   riverEl.innerHTML = "";
 
   const maxMiles = Math.max(...Object.values(floatData).map(t => t.miles));
 
-  // ✅ TICKS (keep these)
+  // ticks
   for (let i = 5; i <= maxMiles; i += 5) {
     const percent = (i / maxMiles) * 100;
 
@@ -62,13 +62,12 @@ function renderRiver(selected) {
     riverEl.appendChild(tick);
   }
 
-  // ❗ STOP if nothing selected
+  // no selection = stop here
   if (!selected) return;
 
   const trip = floatData[selected];
   const percent = (trip.miles / maxMiles) * 100;
 
-  // ✅ ONLY ONE DOT
   const dot = document.createElement("div");
   dot.className = "river-dot active";
   dot.style.left = `${percent}%`;
