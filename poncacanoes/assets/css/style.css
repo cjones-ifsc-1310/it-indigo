@@ -1,0 +1,263 @@
+html {
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: kepler-std-extended-subhead, serif;
+  background: #0f0f14;
+  color: #e6e6e6;
+  line-height: 1.5;
+}
+
+/* Layout */
+.container {
+  margin: auto;
+  padding: 20px;
+  max-width: 1100px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 0;
+}
+
+nav a {
+  color: #c084fc;
+  text-decoration: none;
+  padding: 8px;
+}
+
+/* Calculator */
+.float-calculator {
+  max-width: 520px;
+  margin: 20px auto;
+  padding: 16px;
+  border-radius: 12px;
+  background: #4B594A;
+}
+
+/* Typography */
+h1 {
+  color: #8EB6BF;
+  font-family: alternate-gothic-atf, sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+h2 {
+  color: #8EB6BF;
+  font-family: alternate-gothic-atf, sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  line-height: 1.2;
+}
+
+h3 {
+  color: #8EB6BF;
+  font-family: alternate-gothic-atf, sans-serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  line-height: 1.3;
+}
+
+h4 {
+  color: #8EB6BF;
+  font-family: alternate-gothic-atf, sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.3;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 6px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #8EB6BF;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* static point */
+.static-point {
+  padding: 12px;
+  background: #8EB6BF;
+  color: #000;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* result */
+.result-box {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all .3s ease;
+  background: #6E7349;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.result-box.active {
+  max-height: 300px;
+  opacity: 1;
+  padding: 12px;
+}
+
+.price {
+  font-size: 1.6rem;
+  color: #F26E22;
+  font-weight: bold;
+}
+
+/* =========================
+   RIVER MAP (FULL WIDTH FIXED)
+========================= */
+
+.river-timeline {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  margin: 16px auto;
+  overflow: visible;
+}
+
+/* full width line */
+.river-timeline::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 52px;
+  height: 4px;
+
+  background: rgba(142,182,191,0.3);
+  border-radius: 10px;
+}
+
+/* ticks */
+.river-tick {
+  position: absolute;
+  top: 52px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.river-tick::before {
+  content: "";
+  width: 2px;
+  height: 12px;
+  background: #8EB6BF;
+  margin-bottom: 6px;
+}
+
+.river-tick span {
+  font-size: 11px;
+  color: #8EB6BF;
+}
+
+/* labels */
+.river-label {
+  position: absolute;
+  top: 78px;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 110px;
+}
+
+.river-label small {
+  font-size: 11px;
+  color: #e6e6e6;
+  white-space: nowrap;
+}
+
+/* dot */
+.river-dot {
+  position: absolute;
+  top: 52px;
+  transform: translate(-50%, -50%);
+}
+
+.river-dot .circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F26E22;
+  box-shadow: 0 0 6px rgba(242,110,34,0.4);
+}
+
+/* route bar */
+.route-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+.route-fill {
+  height: 100%;
+  background: #8EB6BF;
+  border-radius: 20px;
+}
+
+/* caption */
+.river-caption {
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #8EB6BF;
+  margin: 6px 0 2px;
+  margin-bottom: 2px;
+}
+
+.result-box {
+  display: none;
+  max-height: none;
+  opacity: 1;
+  overflow: visible;
+  transition: none;
+}
+
+.result-box.active {
+  display: block;
+}
+
+/* mobile label staggering */
+@media (max-width: 600px) {
+
+  .river-label {
+    transition: transform 0.2s ease;
+  }
+
+  .river-label.stagger-1 { transform: translateX(-50%) translateY(0); }
+  .river-label.stagger-2 { transform: translateX(-50%) translateY(12px); }
+  .river-label.stagger-3 { transform: translateX(-50%) translateY(24px); }
+  .river-label.stagger-4 { transform: translateX(-50%) translateY(36px); }
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Website for canoe rental company in Ponca" />
+<meta name="keywords" content="HTML, CSS, JavaScript" />
+<meta name="author" content="Christine Jones" />
+
+<title>Antler & Oar | Canoe Rentals</title>
+
+<link rel="stylesheet" href="https://use.typekit.net/txi5knf.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header role="banner">
+<h1>Antler & Oar</h1>
+
+<nav aria-label="Main navigation">
+<ul>
+<li><a href="#">About</a></li>
+<li><a href="#">Canoe Rentals</a></li>
+<li><a href="#">Cabins</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main id="main" class="container">
+
+<section aria-labelledby="canoe-info">
+<h2 id="canoe-info">Canoes & Shuttle Services</h2>
+
+<p>
+We partner with Buffalo Canoes, which are manufactured right here in Newton County, Arkansas! On top of that, we offer shuttle services to several put-in/take-out sites on the river for your convenience.
+</p>
+
+<p>The prices for both are as follows:</p>
+<h3 id="canoe-calculator-title">Canoe Rental Cost Calculator:</h3>
+
+<div class="float-calculator" aria-labelledby="canoe-calculator-title">
+
+<label for="quantity">Number of Canoes</label>
+<select id="quantity">
+<option value="">Select</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+<p class="rate-note">$67 per canoe + 9.5% tax</p>
+
+<div id="canoe-result" class="result-box" aria-live="polite">
+<h3>Total Cost</h3>
+<p class="price" id="total">$0.00</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h3>Interactive Shuttle Services Float Chart:</h3>
+
+<p>
+We offer shuttling services to the following put-in/take-outs along the river for your convenience!
+*These prices are in addition to the canoe rental price and cover the shuttle cost of one vehicle.
+</p>
+
+<p>
+Use the chart dropdown below to choose your dropoff location and gauge the float time, mileage, and shuttle fee.
+</p>
+
+<div class="float-calculator" aria-labelledby="float-title">
+
+<h3 id="float-title">Plan Your Float</h3>
+
+<div class="river-caption">
+Downriver Distance from Ponca (in miles)
+</div>
+
+<div class="river-timeline" id="river" aria-hidden="false"></div>
+
+<label for="end">Shuttle From</label>
+<div class="static-point">Ponca</div>
+
+<label for="end">Take-Out Location</label>
+<select id="end">
+<option value="">Select Destination</option>
+<option value="Steel Creek">Steel Creek</option>
+<option value="Kyles">Kyles Landing</option>
+<option value="Pruitt">Pruitt</option>
+<option value="Ozark">Ozark</option>
+<option value="Erbie">Erbie</option>
+<option value="Hasty">Hasty</option>
+<option value="Carver">Hwy 123 (Carver)</option>
+</select>
+
+<div id="result" class="result-box" aria-live="polite"></div>
+
+</div>
+<h4>Disclosure:</h4>
+<p>
+“Average river flow is 2 miles per hour. Paddle and float times vary depending on breaks, whether you are paddling or not, and the river level.”
+</p>
+
+</section>
+
+</main>
+
+<script src="assets/js/script.js" defer></script>
+</body>
+</html>
