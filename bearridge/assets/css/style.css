@@ -1,0 +1,95 @@
+/* ===== CABIN ADD-ONS (minimal, inherits everything else) ===== */
+
+/* ===== CABIN ACCORDION (MATCH PONCA STYLE SYSTEM) ===== */
+
+.accordion-toggle {
+  width: 100%;
+  background: #8EB6BF;
+  color: #000;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.accordion-toggle:hover {
+  background: #79a8b2;
+}
+
+/* smooth collapse like Ponca result-box behavior */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.accordion-content.active {
+  max-height: 1200px;
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+/* ===== GALLERY ===== */
+
+.cabin-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.cabin-gallery img {
+  width: 110px;
+  border-radius: 8px;
+}
+
+/* ===== AMENITIES ===== */
+
+.amenities {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.amenities li {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+/* ===== RESULT BOX CONSISTENCY ===== */
+
+#cabin-result {
+  display: none;
+}
+
+#cabin-result.active {
+  display: block;
+}
+
+/* label spacing consistency with Ponca */
+label {
+  display: block;
+  margin: 12px 0 6px;
+}
+
+.rate-note {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+
+/* ===== AMENITIES LIST ===== */
+
+.amenities {
+  padding-left: 18px;
+  margin-top: 8px;
+}
+
+.amenities li {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
