@@ -16,76 +16,134 @@
 <body>
 
 <header role="banner">
-<h1>Bear Ridge Cabin</h1>
+  <h1>Bear Ridge Cabin</h1>
 
-<nav aria-label="Main navigation">
-<ul>
-<li><a href="#">About</a></li>
-<li><a href="#">Cabins</a></li>
-<li><a href="#">Amenities</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</nav>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Canoe Rentals</a></li>
+      <li><a href="#">Cabins</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main class="container">
 
-<section>
+<!-- OVERVIEW -->
+<section class="overview">
+  <h2>Cabin Overview</h2>
 
-<h2>Cabin Overview</h2>
+  <div class="card">
+    <p>
+      Bear Ridge offers two guests a cozy, fully furnished cabin for a romantic getaway in upper Buffalo River country.
+      The cabin has a main floor and sleeping loft with queen-size bed. We are pleased to offer complimentary WIFI.
+    </p>
 
-<div class="card">
-<p>
-Bear Ridge offers two guests a cozy, fully furnished cabin for a romantic getaway in upper Buffalo River country. The cabin has a main floor and sleeping loft with queen-size bed. We are pleased to offer complimentary WIFI with this cabin rental.</p>
+    <p>
+      The kitchen includes appliances, cookware, coffee maker, and dishwasher. The bathroom includes a stone walk-in shower.
+    </p>
+  </div>
+</section>
 
-<p>The cabin's kitchen features a dining bar and is fully furnished with appliances, basic meal prep utensils and cookware, a coffeemaker and even a dishwasher. In the cabin's bathroom, you'll find a lovely stone walk-in shower, along with towels, soap, and shampoo.</p>
+<!-- CAROUSEL + AMENITIES -->
+<section class="card carousel-card">
 
+  <h2 class="carousel-title">Bear Ridge at its Finest</h2>
 
-<h3>Pricing below:</h3>
-</div>
+  <!-- CAROUSEL -->
+  <div class="cabin-carousel">
+    <div class="carousel-track" id="carouselTrack">
 
-<h3>Cabin Rental Cost Calculator:</h3>
+      <img src="assets/img/outside1.webp" class="carousel-image" alt="Cabin exterior">
+      <img src="assets/img/living1.avif" class="carousel-image" alt="Living area">
+      <img src="assets/img/bedroom1.jpg" class="carousel-image" alt="Bedroom">
+      <img src="assets/img/firepit2.jpg" class="carousel-image" alt="Fire pit">
 
-
-<div class="float-calculator card">
-
-  <h3>Bear Ridge Cabin Rental</h3>
-
-  <label for="days">Number of Days</label>
-
-  <select id="days">
-    <option value="">Select</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-  </select>
-
-  <p class="rate-note">$195 per night • $1195 per week</p>
-
-  <div id="cabin-result" class="result-box" aria-live="polite">
-    <h3>Total Cost</h3>
-    <p class="price" id="cabin-total">$0.00</p>
+    </div>
   </div>
 
+  <!-- DOTS -->
+  <div class="carousel-dots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+    <span class="dot" data-index="3"></span>
+  </div>
+
+  <!-- AMENITIES -->
+  <h2 class="amenities-title">Cabin Amenities</h2>
+
+  <div class="amenities-grid">
+
+    <div class="amenity-card">
+      <h3>Comfort</h3>
+      <ul>
+        <li>Hot tub</li>
+        <li>Full HVAC</li>
+        <li>42” TV</li>
+        <li>WiFi included</li>
+      </ul>
+    </div>
+
+    <div class="amenity-card">
+      <h3>Outdoor</h3>
+      <ul>
+        <li>Stone firepit</li>
+        <li>Creekside seating</li>
+        <li>Trail access nearby</li>
+        <li>Firewood provided</li>
+      </ul>
+    </div>
+
+    <div class="amenity-card">
+      <h3>Kitchen</h3>
+      <ul>
+        <li>Full kitchen</li>
+        <li>Dishwasher</li>
+        <li>Coffee maker</li>
+        <li>Cookware included</li>
+      </ul>
+    </div>
+
+  </div>
+<!-- CABIN CALCULATOR MOVED HERE -->
+<div class="calculator-wrapper">
+
+  <h2 class="calculator-title">Bear Ridge Cabin Rental</h2>
+
+  <div class="float-calculator card">
+
+    <label for="days">Number of Days</label>
+
+    <select id="days">
+      <option value="">Select</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+
+    <p class="rate-note">$195 per night or $1195 per week plus tax</p>
+
+    <div id="cabin-result" class="result-box">
+      <h3>Total Cost</h3>
+      <p class="price" id="cabin-total">$0.00</p>
+    </div>
+<a href="#" class="reserve-btn">Reserve Today</a>
+  </div>
 </div>
-
-<section>
-
-<h3>Amenities</h3>
-
-<div class="card">
-<p>
-Hot tub, stone firepit, creekside seating, WiFi (no cell service), 42” TV, BluRay, full kitchen, linens, grill, HVAC, firewood, and trail access nearby.
-</p>
-</div>
-
 </section>
 
 </main>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" alt="Expanded cabin view">
+</div>
 
 <script src="assets/js/script.js" defer></script>
 </body>
