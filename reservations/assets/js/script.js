@@ -43,7 +43,7 @@ const cabinBox = document.getElementById("cabinBreakdown");
 
 const CABIN_RATE = 195;
 const CANOE_RATE = 67;
-const TAX_RATE = 0.065;
+const TAX_RATE = 0.095;
 
 /* =========================
    INIT DEFAULTS
