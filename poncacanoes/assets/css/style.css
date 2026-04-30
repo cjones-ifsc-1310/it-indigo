@@ -237,3 +237,44 @@ select {
   font-weight: 600;
   color: #8EB6BF;
 }
+.reserve-btn {
+  display: block;
+  margin: 20px auto 0;
+
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-family: alternate-gothic-atf, sans-serif;
+
+  background: #8EB6BF;
+  color: #0f0f14;
+
+  border-radius: 999px;
+  border: 2px solid #F26E22;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+  /* subtle depth to match cards */
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.4),
+    0 3px 10px rgba(242, 110, 34, 0.25);
+}
+
+/* hover = slightly more pronounced like cards */
+.reserve-btn:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.5),
+    0 5px 14px rgba(242, 110, 34, 0.35);
+}
+
+/* click feedback */
+.reserve-btn:active {
+  transform: translateY(1px);
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.4),
+    0 2px 6px rgba(242, 110, 34, 0.25);
+}
